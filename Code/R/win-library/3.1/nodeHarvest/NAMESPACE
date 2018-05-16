@@ -1,0 +1,8 @@
+import(graphics)
+importFrom(quadprog,solve.QP)
+importFrom(randomForest,randomForest,getTree,rfImpute)
+
+export(nodeHarvest)
+S3method(predict,nodeHarvest)
+S3method(plot,nodeHarvest)
+S3method(print,nodeHarvest)

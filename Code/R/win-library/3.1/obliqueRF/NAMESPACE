@@ -1,0 +1,6 @@
+export(obliqueRF,orfNews,importance)
+
+S3method(predict, obliqueRF)
+S3method(print, obliqueRF)
+S3method(obliqueRF, default)
+S3method(importance, obliqueRF)

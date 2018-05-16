@@ -1,0 +1,65 @@
+B3                      West German Business Cycles 1955-1994
+EDAM                    Computation of an Eight Direction Arranged Map
+GermanCredit            Statlog German Credit
+NaiveBayes              Naive Bayes Classifier
+b.scal                  Calculation of beta scaling parameters
+benchB3                 Benchmarking on B3 data
+betascale               Scale membership values according to a beta
+                        scaling
+calc.trans              Calculation of transition probabilities
+centerlines             Lines from classborders to the center
+classscatter            Classification scatterplot matrix
+cond.index              Calculation of Condition Indices for Linear
+                        Regression
+corclust                Function to identify groups of highly
+                        correlated variables for removing correlated
+                        features from the data for further analysis.
+countries               Socioeconomic data for the most populous
+                        countries.
+dkernel                 Estimate density of a given kernel
+drawparti               Plotting the 2-d partitions of classification
+                        methods
+e.scal                  Function to calculate e- or softmax scaled
+                        membership values
+errormatrix             Tabulation of prediction errors by classes
+friedman.data           Friedman's classification benchmark data
+greedy.wilks            Stepwise forward variable selection for
+                        classification
+hmm.sop                 Calculation of HMM Sum of Path
+kmodes                  K-Modes Clustering
+loclda                  Localized Linear Discriminant Analysis (LocLDA)
+locpvs                  Pairwise variable selection for classification
+                        in local models
+meclight.default        Minimal Error Classification
+nm                      Nearest Mean Classification
+partimat                Plotting the 2-d partitions of classification
+                        methods
+plineplot               Plotting marginal posterior class probabilities
+plot.NaiveBayes         Naive Bayes Plot
+plot.woe                Plot information values
+predict.NaiveBayes      Naive Bayes Classifier
+predict.loclda          Localized Linear Discriminant Analysis (LocLDA)
+predict.locpvs          predict method for locpvs objects
+predict.meclight        Prediction of Minimal Error Classification
+predict.pvs             predict method for pvs objects
+predict.rda             Regularized Discriminant Analysis (RDA)
+predict.sknn            Simple k Nearest Neighbours Classification
+predict.svmlight        Interface to SVMlight
+predict.woe             Weights of evidence
+pvs                     Pairwise variable selection for classification
+quadplot                Plotting of 4 dimensional membership
+                        representation simplex
+rda                     Regularized Discriminant Analysis (RDA)
+shardsplot              Plotting Eight Direction Arranged Maps or
+                        Self-Organizing Maps
+sknn                    Simple k nearest Neighbours
+stepclass               Stepwise variable selection for classification
+svmlight                Interface to SVMlight
+triframe                Barycentric plots
+trigrid                 Barycentric plots
+triperplines            Barycentric plots
+triplot                 Barycentric plots
+tripoints               Barycentric plots
+tritrafo                Barycentric plots
+ucpm                    Uschi's classification performance measures
+woe                     Weights of evidence

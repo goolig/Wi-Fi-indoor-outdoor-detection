@@ -1,0 +1,11 @@
+catscore                Estimate CAT Scores and t-Scores
+centroids               Group Centroids and (Pooled) Variances
+khan2001                Childhood Cancer Study of Khan et al. (2001)
+predict.sda             Shrinkage Discriminant Analysis 3: Prediction
+                        Step
+sda                     Shrinkage Discriminant Analysis 2: Training
+                        Step
+sda-package             The sda Package
+sda.ranking             Shrinkage Discriminant Analysis 1: Predictor
+                        Ranking
+singh2002               Prostate Cancer Study of Singh et al. (2002)

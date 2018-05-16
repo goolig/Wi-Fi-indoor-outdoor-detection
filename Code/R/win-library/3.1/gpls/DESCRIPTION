@@ -1,0 +1,14 @@
+Package: gpls
+Title: Classification using generalized partial least squares
+Version: 1.38.0
+Author: Beiying Ding
+Description: Classification using generalized partial least squares for
+        two-group and multi-group (more than 2 group) classification.
+Maintainer: Bioconductor Package Maintainer
+ <maintainer@bioconductor.org>
+Imports: stats
+Suggests: MASS
+License: Artistic-2.0
+biocViews: Classification, Microarray, Regression
+Packaged: 2014-10-14 02:00:08 UTC; biocbuild
+Built: R 3.1.1; ; 2014-10-14 09:29:55 UTC; windows

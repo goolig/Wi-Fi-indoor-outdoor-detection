@@ -1,0 +1,4 @@
+o.rocc                  LOOCV using the ROC based classifier
+p.rocc                  Making predictions using the ROC based
+                        classifier
+tr.rocc                 Training of a ROC based classifier

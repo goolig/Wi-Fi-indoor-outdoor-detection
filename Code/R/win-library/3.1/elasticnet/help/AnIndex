@@ -1,0 +1,15 @@
+arrayspc	arrayspc
+cv.enet	cv.enet
+diabetes	diabetes
+enet	enet
+pitprops	pitprops
+plot.enet	plot.enet
+predict.enet	predict.enet
+print.arrayspc	print.arrayspc
+print.enet	print.enet
+print.spca	print.spca
+rootmatrix	elasticnet-internal
+soft	elasticnet-internal
+solvebeta	elasticnet-internal
+spca	spca
+updateRR	elasticnet-internal

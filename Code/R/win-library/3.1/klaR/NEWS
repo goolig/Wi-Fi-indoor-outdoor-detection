@@ -1,0 +1,214 @@
+Changelog:
+==========
+- EDAM and friend added
+- SVM Binaries no longer included (license)
+- Examples for calc.trans(), hmm.sop() updated
+
+- smrplot() no longer included (see below)
+- EDAM (incl. all related stuff and docs) optimized
+
+- fixes und improvements for shardsplot
+- partimat: argument plot.matrix = FALSE introduced
+            to allow style like a scatterplot-matrix / pairs plot;
+            some related changes to get docs / other arguments
+
+- triplot, tritrafo, quadplot, quadtrafo, centerlines added
+
+- shardsplot: + now utilizes the whole figure region
+              + bugfix in expanded shardsplots
+              + new args: xlab, ylab, xaxs, yaxs
+              + corrected typos in docs
+
+- shardsplot: + Examples in EDAM() and shardsplot() fixed in resp.
+                to legend() calls
+              + box() added in shardsplot()
+- quadplot and friends: Minor doc fixes.
+
+- triplot and friends added
+- triplot doc fixes by KL, UL, CR, and thereafter *again* by UL.
+- shardsplot, countries: Zwei keine Fehler in den Manuals geändert
+
+- minor changes in: tritrafo + docs, predict.svmlight,
+  quadplot docs, ucpm docs
+
+- quadplot "fixed" and several minor doc. changes
+
+==== release: 0.2-1 (first one on CRAN)
+
+- quadplot arguments added and code improved to allow much more
+  fine-tuning.
+- swapped order of returned arguments in predict.svmlight()
+
+- triperplines + docs added, triplot.R + docu (examples) changed accordingly
+
+- stepclass() can handle ucpm() measures now
+
+- stepclass() improvement fixed. improvement is now an absolute measure that
+  works with arbitrary ucpm()s. priors have been defined for the null model.
+  Defaults now to 0.05 rather than 0.95
+  Explicit argument "prior" has been removed, since the implementation war crude anyway.
+  *Many* cosmetic changes
+
+- fix in ucpm(), failed if no colnames were given for the argument.
+
+- fix in svmlight / predict.svmlight: also works now if no path is given
+- svmlight() now returns values scaled via e.scal()
+- some cosmetic changes to svmlight and the help page
+
+- fixes for rda()'s optimization code
+
+- fixes for help files: NaiveBayes, b.scal, betascale
+- cosmetic changes to correpsonding code
+
+==== release: 0.3-0 (second one on CRAN)
+
+- new argument legend.bg in drawparti
+- some more fixes for beta scaling
+- major fixes and extensions (regression, o-a-o) for svmlight
+- membercheck() function introduced (checks in ucpm and betascale)
+- NAMESPACE added
+
+==== release: 0.3-2
+
+- major bugfixes: *.matrix have been made NAMESPACE compatible
+                  stepclass, try-catching corrected
+                  predict.svmlight oao works for two classes
+
+==== release: 0.3-3, 0.3-4
+
+- minor fixes (e.g. to calm down CRAN maintainer)
+
+==== release: 0.4-0
+
+- first preparations for translations
+- some bug fixes, new args and better docs for plot functions
+- some regressions tests added
+- greedy.wilks and benchB3 added
+- nm (nearest mean)
+- meclight added
+- stepclass returns a formula
+- quadplot fixed now (setting "usr" appropriately),
+   works now with together with fixed scatterplot3d_0.3-22
+
+==== release: 0.4-1
+
+- stepclass has new argument min1var = TRUE (-> at least one variable in the model)
+- terms(....., data=data)
+
+==== release: 0.4-2
+
+- minor svmlight.Rd improvement
+- all.equal stuff for R-2.3.x changed
+
+==== release: 0.5-0
+
+- loclda and friends added
+
+==== release: 0.5-1
+
+- cat -> message
+- fixed links to Uschi's Diss
+- GPL 2 (but not newer!)
+- loclda speed improvement
+
+==== release: 0.5-2
+
+- Laplace correction for NaiveBayes
+
+==== release: 0.5-3
+
+- better computational properties in predict.NaiveBayes for many variables
+  Thanks to Max Kuhn!
+
+==== release: 0.5-4
+
+- many fixes for the codetools checks
+
+==== release: 0.6-0
+
+- additions to shardsplot (for som display) by Dominik Reusser
+- new function level_shardsplot and helper rerange by Dominik Reusser
+- pvs, locpvs, corclust added
+
+==== release: 0.6-1
+
+- kmodes added
+
+==== release: 0.6-2
+
+- fix for numerics in predict.NaiveBayes by Karsten Luebke (bug reported by Feiming Chen)
+- K. Luebke's mail address changed
+
+==== release: 0.6-3
+
+- document several instances of "..." arguments that had empty argument descriptions
+- passing "..." to underlying print() functions for print.rda()
+
+==== release: 0.6-4
+
+- another fix for numerics in predict.NaiveBayes by Karsten Luebke
+- fix for wrong error message in case of 0 in 2nd column of tables for factors
+
+==== release: 0.6-7
+
+- fix for shardsplot color problems by Dominik Reusser
+
+==== release: 0.6-8
+
+- fix for data() without envir
+- fix for more than 100 factor levels in stepclass (reported by Ryan Brady)
+
+==== release: 0.6-9
+
+- new function woe() and its methods: Computes weight of evidence transform of factor variables for binary classification
+- fix: better error message: greedy.wilks does not support more than one grouping variable
+- fix: NaiveBayes work for explanatory variables that are factors with only 1 level (reported by Jeff Allard)
+- fix: break lines wider than 100 characters in Rd files
+
+==== release: 0.6-10
+
+- rename Changes-ToDo -> NEWS to make R CMD check happy
+- move combinat from Suggests to Imports
+- remove require calls for MASS
+
+==== release: 0.6-11
+
+- GermanCredit data copied vom evtree package which has been archived
+- depends on R >= 2.10.0
+
+==== release: 0.6-12
+
+- new function cond.index for the "Calculation of Condition Indices for Linear Regression"
+- bugfix for NaiveBayes: predict would not work for one explan. variable
+
+
+
+
+To Do (at least in Uwe's opinion):
+======
+
+1. disco must go into klaR and to CRAN!
+   (e.g. for partimat)
+
+
+stepclass:
+- LATER: many rather long functions defined in stepclass()
+  should be defined in the top level of the package
+  (e.g. documenting them as "internal")
+- LATER: Rewrite it to be readable.
+- allow for *arbitrary* performance measures
+- allow for arbitrary predict functions
+
+rda:
+- In Main Procedure some loops within loops within ... with
+  really bad memory allocatoion as in: new <- c(new, ......)
+  e.g. lines 383 ff., the same with calls to cbind()
+- LATER: rda.default() - Many functions defined therein rather
+  than in the package itself. Why?
+- LATER: another optimizer, e.g. optim()?
+
+quadplot:
+- rgl implementation
+
+triplot/quadplot:
+- check whether membership values are in [0,1]

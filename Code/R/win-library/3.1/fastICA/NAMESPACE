@@ -1,0 +1,3 @@
+useDynLib(fastICA, .registration = TRUE)
+
+export(fastICA, ica.R.def, ica.R.par)

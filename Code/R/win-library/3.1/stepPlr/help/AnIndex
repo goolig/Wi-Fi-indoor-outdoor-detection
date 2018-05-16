@@ -1,0 +1,14 @@
+anova.stepplr	plr-internal
+cross.imat	plr-internal
+cv.step.plr	cv.step.plr
+get.imat	plr-internal
+imat	plr-internal
+plr	plr
+predict.plr	predict.plr
+predict.stepplr	predict.stepplr
+print.plr	plr-internal
+print.stepplr	plr-internal
+step.plr	step.plr
+summary.plr	plr-internal
+summary.stepplr	plr-internal
+term.match	plr-internal

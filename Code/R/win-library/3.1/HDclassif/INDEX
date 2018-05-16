@@ -1,0 +1,12 @@
+Crabs                   Morphological Measurements on Leptograpsus
+                        Crabs.
+HDclassif-package       High Dimensional Discriminant Analysis and Data
+                        Clustering
+demo_hddc               Demonstration of the clustering process of
+                        HDDC.
+hdda                    High Dimensional Discriminant Analysis
+hddc                    High Dimensional Data Clustering
+plot.hdc                Cattell's Scree-Test for 'hdc' class objects.
+predict.hdc             Prediction method for 'hdc' class objects.
+simuldata               Gaussian Data Generation
+wine                    Wine dataset

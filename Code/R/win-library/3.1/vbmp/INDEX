@@ -1,0 +1,10 @@
+BRCA12                  BRCA tumour dataset
+covParams               VBMP covariance functions parameters
+lowerBound              VBMP Lower bound estimate
+plotDiagnostics         VBMP covariance diagnostics plot
+predClass               VBMP Predicted class values
+predError               Out-of-Sample VBMP Prediction error
+predLik                 VBMP predictive likelihood estimate
+predictCPP              VBMP predict functions parameters
+vbmp                    Variational Bayesian Multinomial Probit
+                        Regression with Gaussian Process Priors.

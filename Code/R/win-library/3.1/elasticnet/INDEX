@@ -1,0 +1,13 @@
+arrayspc                Sparse PCs of Microarrays
+cv.enet                 Computes K-fold cross-validated error curve for
+                        elastic net
+diabetes                Blood and other measurements in diabetics
+enet                    Fits Elastic Net regression models
+pitprops                Pitprops correlation data
+plot.enet               Plot method for enet objects
+predict.enet            Make predictions or extract coefficients from a
+                        fitted elastic net model
+print.arrayspc          Print method for arrayspc objects
+print.enet              Print method for enet objects
+print.spca              Print method for spca objects
+spca                    Sparse Principal Components Analysis

@@ -1,0 +1,10 @@
+Boruta                  Important attribute search using Boruta
+                        algorithm
+TentativeRoughFix       Rough fix of Tentative attributes
+attStats                Extract attribute statistics
+getImpFerns             Random Ferns importance
+getImpRf                randomForest importance adapters
+getSelectedAttributes   Extract names of the selected attributes
+plot.Boruta             Plot Boruta object
+plotImpHistory          Plot Boruta object as importance history
+print.Boruta            Print Boruta object

@@ -1,0 +1,7 @@
+export(hda, showloadings)
+S3method(hda, default)
+S3method(hda, formula)
+S3method(predict, hda)
+S3method(print, hda)
+S3method(plot, hda)
+import(e1071)

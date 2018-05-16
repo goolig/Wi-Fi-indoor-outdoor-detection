@@ -1,0 +1,4 @@
+export(foba)
+S3method(print,foba)
+S3method(predict,foba)
+

@@ -1,0 +1,5 @@
+hda                     Heteroscedastic discriminant analysis
+plot.hda                Plot transformed data
+predict.hda             Heteroscedastic discriminant analysis
+showloadings            Loadings plot for heteroscedastic discriminant
+                        analysis

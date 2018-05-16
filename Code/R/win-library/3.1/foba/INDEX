@@ -1,0 +1,5 @@
+boston                  Partial Boston Housing data
+foba                    Greedy variable selection for ridge regression
+predict.foba            Make predictions or extract coefficients from a
+                        fitted foba model
+print.foba              Print a fitted foba model

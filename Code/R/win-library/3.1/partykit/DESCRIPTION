@@ -1,0 +1,31 @@
+Package: partykit
+Title: A Toolkit for Recursive Partytioning
+Date: 2015-02-20
+Version: 1.0-0
+Authors@R: c(person(given = "Torsten", family = "Hothorn", role = c("aut", "cre"), email = "Torsten.Hothorn@R-project.org"),
+             person(given = "Achim", family = "Zeileis", role = "aut", email = "Achim.Zeileis@R-project.org"))
+Description: A toolkit with infrastructure for representing, summarizing, and
+  visualizing tree-structured regression and classification models. This
+  unified infrastructure can be used for reading/coercing tree models from
+  different sources (rpart, RWeka, PMML) yielding objects that share
+  functionality for print/plot/predict methods. Furthermore, new and improved
+  reimplementations of conditional inference trees (ctree) and model-based
+  recursive partitioning (mob) from the party package are provided based
+  on the new infrastructure.
+Depends: R (>= 3.1.0), graphics, grid
+Imports: stats, survival
+Suggests: XML, pmml, rJava, rpart, mvtnorm, Formula, sandwich,
+        strucchange, vcd, AER, mlbench, TH.data (>= 1.0-3), coin, RWeka
+        (>= 0.4-19), datasets, parallel, psychotools, psychotree
+LazyData: yes
+License: GPL-2 | GPL-3
+URL: http://partykit.R-forge.R-project.org/partykit
+Packaged: 2015-02-21 15:14:44 UTC; hothorn
+Author: Torsten Hothorn [aut, cre],
+  Achim Zeileis [aut]
+Maintainer: Torsten Hothorn <Torsten.Hothorn@R-project.org>
+NeedsCompilation: yes
+Repository: CRAN
+Date/Publication: 2015-02-21 18:20:26
+Built: R 3.1.3; x86_64-w64-mingw32; 2015-03-19 23:38:35 UTC; windows
+Archs: i386, x64

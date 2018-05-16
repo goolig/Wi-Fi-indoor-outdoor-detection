@@ -1,0 +1,10 @@
+C5.0	C5.0
+C5.0.default	C5.0
+C5.0.formula	C5.0
+C5.0Control	C5.0Control
+C5imp	varImp.C5.0
+churnTest	churn
+churnTrain	churn
+plot.C5.0	plot.C5.0
+predict.C5.0	predict.C5.0
+summary.C5.0	summary.C5.0

@@ -1,0 +1,1 @@
+export(vbmp, predictCPP, predError, predLik, predClass, covParams, plotDiagnostics)

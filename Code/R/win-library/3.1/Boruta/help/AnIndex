@@ -1,0 +1,14 @@
+attStats	attStats
+Boruta	Boruta
+Boruta.default	Boruta
+Boruta.formula	Boruta
+getImpFerns	getImpFerns
+getImpRf	getImpRf
+getImpRfGini	getImpRf
+getImpRfRaw	getImpRf
+getImpRfZ	getImpRf
+getSelectedAttributes	getSelectedAttributes
+plot.Boruta	plot.Boruta
+plotImpHistory	plotImpHistory
+print.Boruta	print.Boruta
+TentativeRoughFix	TentativeRoughFix

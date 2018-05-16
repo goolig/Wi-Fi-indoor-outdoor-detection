@@ -1,0 +1,6 @@
+make sure the moudle is set on intellij.
+install r R-3.1.3. later version dont work for some reason.
+set r_home variable: R_HOME = C:\Program Files\R\R-3.1.3
+copy jri.dll (64X) to C:\Program Files\R\R-3.1.3\bin\x64 (to run from bat file)
+copy jri.dll to C:\Program Files\Java\jdk1.8.0_51\jre\bin (to run from intellij)
+add to path variable: C:\Program Files\R\R-3.1.3\bin\x64 (where r.dll is)

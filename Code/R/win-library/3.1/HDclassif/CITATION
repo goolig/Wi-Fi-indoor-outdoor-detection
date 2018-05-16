@@ -1,0 +1,21 @@
+citHeader("To cite HDclassif in publications use:")
+
+citEntry(entry = "Article",
+  title        = "{HDclassif}: An {R} Package for Model-Based Clustering and Discriminant Analysis of High-Dimensional Data",
+  author       = personList(as.person("Laurent Berg\\'e"),
+                   as.person("Charles Bouveyron"),
+                   as.person("St\\'ephane Girard")),
+  journal      = "Journal of Statistical Software",
+  year         = "2012",
+  volume       = "46",
+  number       = "6",
+  pages        = "1--29",
+  url          = "http://www.jstatsoft.org/v46/i06/",
+
+  textVersion  =
+  paste("Laurent Berge, Charles Bouveyron, Stephane Girard (2012).",
+        "HDclassif: An R Package for Model-Based Clustering and Discriminant Analysis of High-Dimensional Data.",
+        "Journal of Statistical Software, 46(6), 1-29.",
+        "URL http://www.jstatsoft.org/v46/i06/.")
+)
+

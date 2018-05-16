@@ -1,0 +1,282 @@
+
+
+
+library(flexclust)
+inputGuy <- read.csv("F:\\thesis\\clusterWifiScanGuy19032015.csvDBSANLight.csv",header=F)
+inputGuy = as.numeric(inputGuy$V1)
+dbClusters <- read.csv("F:\\thesis\\clusterWifiScanGuy19032015.csvDBSCAN.csv",header=F)
+dbClusters = as.numeric(dbClusters$V1)
+tab <- table(inputGuy, dbClusters)
+randIndex(tab, correct=FALSE)
+randIndex(tab, correct=TRUE)
+dbClusters[which.max(dbClusters)]
+inputGuy [which.max(inputGuy)]
+
+
+
+library(flexclust)
+inputGuy <- read.csv("F:\\thesis\\clusterWifiScanZyossiLog.csvDBSANLight.csv",header=F)
+inputGuy = as.numeric(inputGuy$V1)
+dbClusters <- read.csv("F:\\thesis\\clusterWifiScanZyossiLog.csvDBSCAN.csv",header=F)
+dbClusters = as.numeric(dbClusters$V1)
+tab <- table(inputGuy, dbClusters)
+randIndex(tab, correct=FALSE)
+randIndex(tab, correct=TRUE)
+dbClusters[which.max(dbClusters)]
+inputGuy [which.max(inputGuy)]
+
+
+
+
+
+
+library(flexclust)
+inputGuy <- read.csv("F:\\thesis\\clusterWifiScanSagiLog.csvDBSANLight.csv",header=F)
+inputGuy = as.numeric(inputGuy$V1)
+dbClusters <- read.csv("F:\\thesis\\clusterWifiScanSagiLog.csvDBSCAN.csv",header=F)
+dbClusters = as.numeric(dbClusters$V1)
+tab <- table(inputGuy, dbClusters)
+randIndex(tab, correct=FALSE)
+randIndex(tab, correct=TRUE)
+dbClusters[which.max(dbClusters)]
+inputGuy [which.max(inputGuy)]
+
+
+
+
+
+
+
+library(flexclust)
+inputGuy <- read.csv("F:\\thesis\\clusterWifiScanRotemLog.csvDBSANLight.csv",header=F)
+inputGuy = as.numeric(inputGuy$V1)
+dbClusters <- read.csv("F:\\thesis\\clusterWifiScanRotemLog.csvDBSCAN.csv",header=F)
+dbClusters = as.numeric(dbClusters$V1)
+tab <- table(inputGuy, dbClusters)
+randIndex(tab, correct=FALSE)
+randIndex(tab, correct=TRUE)
+dbClusters[which.max(dbClusters)]
+inputGuy [which.max(inputGuy)]
+
+
+
+
+
+
+
+
+library(flexclust)
+inputGuy <- read.csv("F:\\thesis\\clusterWifiScanIdanLog.csvDBSANLight.csv",header=F)
+inputGuy = as.numeric(inputGuy$V1)
+dbClusters <- read.csv("F:\\thesis\\clusterWifiScanIdanLog.csvDBSCAN.csv",header=F)
+dbClusters = as.numeric(dbClusters$V1)
+tab <- table(inputGuy, dbClusters)
+randIndex(tab, correct=FALSE)
+randIndex(tab, correct=TRUE)
+dbClusters[which.max(dbClusters)]
+inputGuy [which.max(inputGuy)]
+
+
+
+
+
+library(flexclust)
+inputGuy <- read.csv("F:\\thesis\\clusterWifiScanZNofarLog.csvDBSANLight.csv",header=F)
+inputGuy = as.numeric(inputGuy$V1)
+dbClusters <- read.csv("F:\\thesis\\clusterWifiScanZNofarLog.csvDBSCAN.csv",header=F)
+dbClusters = as.numeric(dbClusters$V1)
+tab <- table(inputGuy, dbClusters)
+randIndex(tab, correct=FALSE)
+randIndex(tab, correct=TRUE)
+dbClusters[which.max(dbClusters)]
+inputGuy [which.max(inputGuy)]
+
+
+
+
+
+
+
+
+
+library(flexclust)
+inputGuy <- read.csv("F:\\thesis\\clusterWifiScanNoamLog.csvDBSANLight.csv",header=F)
+inputGuy = as.numeric(inputGuy$V1)
+dbClusters <- read.csv("F:\\thesis\\clusterWifiScanNoamLog.csvDBSCAN.csv",header=F)
+dbClusters = as.numeric(dbClusters$V1)
+tab <- table(inputGuy, dbClusters)
+randIndex(tab, correct=FALSE)
+randIndex(tab, correct=TRUE)
+dbClusters[which.max(dbClusters)]
+inputGuy [which.max(inputGuy)]
+
+
+
+
+
+
+library(flexclust)
+inputGuy <- read.csv("F:\\thesis\\clusterZWifiScanAviadLog.csvDBSANLight.csv",header=F)
+inputGuy = as.numeric(inputGuy$V1)
+dbClusters <- read.csv("F:\\thesis\\clusterZWifiScanAviadLog.csvDBSCAN.csv",header=F)
+dbClusters = as.numeric(dbClusters$V1)
+tab <- table(inputGuy, dbClusters)
+randIndex(tab, correct=FALSE)
+randIndex(tab, correct=TRUE)
+dbClusters[which.max(dbClusters)]
+inputGuy [which.max(inputGuy)]
+
+
+
+
+
+
+
+library(flexclust)
+inputGuy <- read.csv("F:\\thesis\\clusterWifiScanZAaronLog.csvDBSANLight.csv",header=F)
+inputGuy = as.numeric(inputGuy$V1)
+dbClusters <- read.csv("F:\\thesis\\clusterWifiScanZAaronLog.csvDBSCAN.csv",header=F)
+dbClusters = as.numeric(dbClusters$V1)
+tab <- table(inputGuy, dbClusters)
+randIndex(tab, correct=FALSE)
+randIndex(tab, correct=TRUE)
+dbClusters[which.max(dbClusters)]
+inputGuy [which.max(inputGuy)]
+
+
+
+
+
+
+library(flexclust)
+inputGuy <- read.csv("F:\\thesis\\clusterWifiScanIgalLog.csvDBSANLight.csv",header=F)
+inputGuy = as.numeric(inputGuy$V1)
+dbClusters <- read.csv("F:\\thesis\\clusterWifiScanIgalLog.csvDBSCAN.csv",header=F)
+dbClusters = as.numeric(dbClusters$V1)
+tab <- table(inputGuy, dbClusters)
+randIndex(tab, correct=FALSE)
+randIndex(tab, correct=TRUE)
+dbClusters[which.max(dbClusters)]
+inputGuy [which.max(inputGuy)]
+
+
+
+
+
+
+
+library(flexclust)
+inputGuy <- read.csv("F:\\thesis\\clusterWifiScanZGenady2Log.csvDBSANLight.csv",header=F)
+inputGuy = as.numeric(inputGuy$V1)
+dbClusters <- read.csv("F:\\thesis\\clusterWifiScanZGenady2Log.csvDBSCAN.csv",header=F)
+dbClusters = as.numeric(dbClusters$V1)
+tab <- table(inputGuy, dbClusters)
+randIndex(tab, correct=FALSE)
+randIndex(tab, correct=TRUE)
+dbClusters[which.max(dbClusters)]
+inputGuy [which.max(inputGuy)]
+
+
+
+
+
+
+library(flexclust)
+inputGuy <- read.csv("F:\\thesis\\clusterZWifiScanAviLog.csvDBSANLight.csv",header=F)
+inputGuy = as.numeric(inputGuy$V1)
+dbClusters <- read.csv("F:\\thesis\\clusterZWifiScanAviLog.csvDBSCAN.csv",header=F)
+dbClusters = as.numeric(dbClusters$V1)
+tab <- table(inputGuy, dbClusters)
+randIndex(tab, correct=FALSE)
+randIndex(tab, correct=TRUE)
+dbClusters[which.max(dbClusters)]
+inputGuy [which.max(inputGuy)]
+
+
+
+library(flexclust)
+inputGuy <- read.csv("F:\\thesis\\clusterWifiScanMatanLog.csvDBSANLight.csv",header=F)
+inputGuy = as.numeric(inputGuy$V1)
+dbClusters <- read.csv("F:\\thesis\\clusterWifiScanMatanLog.csvDBSCAN.csv",header=F)
+dbClusters = as.numeric(dbClusters$V1)
+tab <- table(inputGuy, dbClusters)
+randIndex(tab, correct=FALSE)
+randIndex(tab, correct=TRUE)
+dbClusters[which.max(dbClusters)]
+inputGuy [which.max(inputGuy)]
+
+set.seed(5464)
+numberToGenerate = 100
+resultRI = sample(0:0,numberToGenerate , replace=T)
+resultARI = sample(0:0,numberToGenerate , replace=T)
+for (i in 1:numberToGenerate){
+	randomCluster <- sample(1:dbClusters[which.max(dbClusters)], length(dbClusters), replace=T)
+	tab <- table(randomCluster, dbClusters)
+	resultRI[i] = randIndex(tab, correct=FALSE)
+	resultARI[i] = randIndex(tab, correct=TRUE)
+}
+mean(resultRI)
+sd(resultRI)
+mean(resultARI)
+sd(resultARI)
+library(beepr)
+beep("fanfare")
+
+
+
+
+
+
+
+
+
+
+
+
+
+input = read.csv("F:\\thesis\\dist.csv", header = FALSE)
+input <- as.matrix(input)
+
+
+
+library(fpc)
+library(flexclust)
+memory.limit(20000)
+input <- as.matrix(read.csv("F:\\thesis\\dist.csv", header = FALSE))
+result = dbscan(input,method="dist",eps=0.22,MinPts=1)
+dbClusters = predict(result, input)
+inputGuy <- read.csv("F:\\thesis\\cluster.csv",header=F)
+inputGuy = as.numeric(inputGuy$V1)
+tab <- table(inputGuy, dbClusters)
+randIndex(tab, correct=FALSE)
+randIndex(tab, correct=TRUE)
+
+
+
+
+
+
+library(filematrix)
+input <- fm.create.from.text.file("F:\\thesis\\dist.csv","F:\\thesis\\fileTmp",delimiter=',', type="double")
+
+
+
+
+
+library(phyclust)
+RRand(dbClusters , inputGuy)
+
+
+
+xn <- scan("F:\\thesis\\dist.csv", what=numeric(0),sep=',') 
+input  <- as.big.matrix("F:\\thesis\\dist.csv", type='double',sep = ',')
+
+input  <- read.big.matrix("F:\\thesis\\dist.csv", type="double",backingpath ="F:\\")
+
+input = read.big.matrix("F:\\thesis\\dist.csv", header = F, type = "double",backingpath ="F:\\thesis\\")
+input2 = as.big.matrix(input, type = NULL, separated = FALSE,
+backingpath = F:\\thesis\\tmp.bin)
+
+library(bigmemory)
+install.packages("flexclust")
+install.packages("bigmemory")

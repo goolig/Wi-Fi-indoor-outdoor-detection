@@ -1,0 +1,9 @@
+BRCA12	BRCA12
+covParams	covParams
+lowerBound	lowerBound
+plotDiagnostics	plotDiagnostics
+predClass	predClass
+predError	predError
+predictCPP	predictCPP
+predLik	predLik
+vbmp	vbmp

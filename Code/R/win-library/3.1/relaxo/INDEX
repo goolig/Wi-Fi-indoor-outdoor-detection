@@ -1,0 +1,4 @@
+cvrelaxo                Cross validation for "Relaxed Lasso"
+plot.relaxo             Plot of a Relaxed Lasso Object
+predict.relaxo          predict method for class relaxo
+relaxo                  Relaxed Lasso (relaxo)

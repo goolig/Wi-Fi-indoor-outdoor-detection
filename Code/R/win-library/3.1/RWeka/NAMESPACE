@@ -1,0 +1,74 @@
+import("RWekajars")
+import("stats")
+importFrom("graphics", "plot")
+## For 2.5.0 or later, read.table() and friends were moved to utils, so
+## we need
+##   importFrom("utils", "read.table", "write.table")
+## Let's just import utils to keep things simple.
+import("utils")
+## When using rJava without attaching the package we used to get errors
+## like
+##   "jarrayRef" is not a defined class
+## but apparently things improved ...
+importFrom("rJava", ".jaddClassPath", ".jarray", ".jcall", ".jcast",
+           ".jevalArray", ".jfield", ".jfindClass", ".jinit", ".jlong",
+           ".jnew", ".jnull", ".jpackage")
+## Only needed for plotting Weka_tree objects, which requires party
+## which in turn depends on (hence attaches) grid, but in any case ...
+import("grid")
+
+export("read.arff",                     # "read.arff.R",
+       "write.arff",                    # "write.arff.R",
+       ## Associators
+       "make_Weka_associator",
+       "Apriori", "Tertius",
+       ## Attribute evaluators
+       "make_Weka_attribute_evaluator",
+       "GainRatioAttributeEval", "InfoGainAttributeEval",
+       ## Classifiers
+       "make_Weka_classifier",
+       "LinearRegression", "Logistic", "SMO",
+       "IBk", "LBR",
+       "AdaBoostM1", "Bagging", "LogitBoost", "MultiBoostAB",
+       "Stacking", "CostSensitiveClassifier",
+       "JRip", "M5Rules", "OneR", "PART",
+       "J48", "M5P", "LMT", "DecisionStump",
+       ## Clusterers
+       "make_Weka_clusterer",
+       "Cobweb", "FarthestFirst", "SimpleKMeans", "XMeans", "DBScan",
+       ## Converters
+       "C45Loader", "XRFFLoader", "C45Saver", "XRFFSaver",
+       ## Filters
+       "make_Weka_filter",
+       "Normalize", "Discretize",
+       ## Stemmers
+       "IteratedLovinsStemmer", "LovinsStemmer",
+       ## Tokenizers
+       "AlphabeticTokenizer", "NGramTokenizer", "WordTokenizer",
+       ## Others ...
+       "list_Weka_interfaces",
+       "WOW",
+       "WPM",
+       "make_Weka_package_loader",
+       "Weka_control",
+       "write_to_dot",
+       "evaluate_Weka_classifier",
+       "parse_Weka_digraph")
+
+S3method("fitted", "Weka_classifier")
+S3method("fitted", "Weka_clusterer")
+S3method("model.frame", "Weka_classifier")
+S3method("plot", "Weka_tree")
+S3method("predict", "Weka_classifier")
+S3method("predict", "Weka_clusterer")
+S3method("print", "R_Weka_interface")
+S3method("print", "Weka_associator")
+S3method("print", "Weka_classifier")
+S3method("print", "Weka_clusterer")
+S3method("print", "WOW")
+S3method("print", "Weka_control")
+S3method("as.character", "Weka_control")
+S3method("write_to_dot", "Weka_classifier")
+S3method("print", "Weka_filter")
+S3method("print", "Weka_classifier_evaluation")
+S3method("summary", "Weka_classifier")

@@ -1,0 +1,17 @@
+KL.plugin               Plug-In Estimator of the Kullback-Leibler
+                        divergence and of the Chi-Squared Statistic
+discretize              Discretize Continuous Random Variables
+entropy                 Estimating Entropy From Observed Counts
+entropy-package         The entropy Package
+entropy.ChaoShen        Chao-Shen Entropy Estimator
+entropy.Dirichlet       Dirichlet Prior Bayesian Estimators of Entropy,
+                        Mutual Information and Other Related Quantities
+entropy.MillerMadow     Miller-Madow Entropy Estimator
+entropy.NSB             R Interface to NSB Entropy Estimator
+entropy.empirical       Empirical Estimators of Entropy and Mutual
+                        Information and Related Quantities
+entropy.plugin          Plug-In Entropy Estimator
+entropy.shrink          Shrinkage Estimators of Entropy, Mutual
+                        Information and Related Quantities
+mi.plugin               Plug-In Estimator of Mutual Information and of
+                        the Chi-Squared Statistic of Independence

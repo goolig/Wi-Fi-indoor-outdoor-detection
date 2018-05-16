@@ -1,0 +1,21 @@
+export(bst,
+       bst_control, gaussloss, hingeloss, loss, gaussngra, hingengra, ngradient, plotCVbst, cv.bst, fpartial.bst, mhingeova, cv.mhingeova, mada, cv.mada, 
+       mhingebst_fit, mhingebst, loss.mhingebst, cv.mhingebst, fpartial.mhingebst, ex1data, balanced.folds, permute.rows, bst.sel)
+exportClasses("bst", "mhingebst")
+exportClasses("mhingeova")
+exportMethods("show")
+
+importFrom("rpart", "rpart")
+importFrom("rpart", "rpart.control")
+importFrom("rpart", "prune")
+importFrom("gbm", "gbm")
+S3method(plot, bst)
+S3method(print, bst)
+S3method(coef, bst)
+S3method(predict, bst)
+S3method(print, mhingeova)
+
+S3method(print, mhingebst)
+S3method(predict, mhingebst)
+
+

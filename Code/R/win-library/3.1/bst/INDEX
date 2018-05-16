@@ -1,0 +1,15 @@
+bst                     Boosting for Classification and Regression
+bst-package             Boosting for Classification and Regression
+bst.sel                 Function to select number of predictors
+bst_control             Control Parameters for Boosting
+cv.bst                  Cross-Validation for Binary HingeBoost
+cv.mada                 Cross-Validation for one-vs-all AdaBoost with
+                        multi-class problem
+cv.mhingebst            Cross-Validation for Multi-class Hinge Boosting
+cv.mhingeova            Cross-Validation for one-vs-all HingeBoost with
+                        multi-class problem
+ex1data                 Generating Three-class Data
+loss                    Internal Function
+mada                    Multi-class AdaBoost
+mhingebst               Boosting for Multi-class Classification
+mhingeova               Multi-class HingeBoost

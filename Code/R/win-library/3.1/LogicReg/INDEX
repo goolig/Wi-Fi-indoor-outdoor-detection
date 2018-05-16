@@ -1,0 +1,21 @@
+cumhaz                  Cumulative hazard transformation
+eval.logreg             Evaluate a Logic Regression tree
+frame.logreg            Constructs a data frame for one or more Logic
+                        Regression models
+logreg                  Logic Regression
+logreg.anneal.control   Control for Logic Regression
+logreg.mc.control       Control for Logic Regression
+logreg.myown            Writing your own Logic Regression scoring
+                        function
+logreg.savefit1         Sample results for Logic Regression
+logreg.testdat          Test data for Logic Regression
+logreg.tree.control     Control for logreg
+logregmodel             Format of class logregmodel
+logregtree              Format of class logregtree
+plot.logreg             Plots for Logic Regression
+plot.logregmodel        Plots for Logic Regression
+plot.logregtree         A plot of one Logic Regression tree.
+predict.logreg          Predicted values Logic Regression
+print.logreg            Prints Logic Regression Output
+print.logregmodel       Prints Logic Regression Formula
+print.logregtree        Prints Logic Regression Formula

@@ -1,0 +1,9 @@
+Outstanding issues:
+- TODO: Fix issue with not working starting using connListObject
+- TODO: Include test cases
+- TODO: Fix issue with possible memory leak
+
+Version 1.05:
+- Removed First.Lib and Last.Lib used for loading compiled code; loading it using Namespace
+- Fixed warnings related to use of "exit" and "cout" in C code
+

@@ -1,0 +1,34 @@
+Package: robustbase
+Version: 0.92-3
+Date: 2015-01-13
+Title: Basic Robust Statistics
+Author: Original code by many authors, notably
+	Peter Rousseeuw and Christophe Croux, see file 'Copyrights';
+	Valentin Todorov <valentin.todorov@chello.at>,
+	Andreas Ruckstuhl <andreas.ruckstuhl@zhaw.ch>,
+	Matias Salibian-Barrera <matias@stat.ubc.ca>,
+	Tobias Verbeke <tobias.verbeke@openanalytics.eu>,
+	Manuel Koller <mkoller@ispm.unibe.ch>,
+	Martin Maechler
+Maintainer: Martin Maechler <maechler@stat.math.ethz.ch>
+URL: http://robustbase.r-forge.r-project.org/
+Description: "Essential" Robust Statistics.
+ Tools allowing to analyze data with robust methods.  This includes
+ regression methodology including model selections and multivariate
+ statistics where we strive to cover the book "Robust Statistics,
+ Theory and Methods" by Maronna, Martin and Yohai; Wiley 2006.
+Depends: R (>= 2.15.1)
+Imports: stats, graphics, utils, methods, DEoptimR
+Suggests: grid, MASS, lattice, boot, cluster, Matrix, robust,
+        fit.models, MPV, xtable, ggplot2, GGally, RColorBrewer,
+        reshape2, sfsmisc, catdata
+SuggestsNote: mostly only because of vignette graphics
+LazyData: yes
+License: GPL (>= 2)
+ByteCompile: yes
+Packaged: 2015-01-14 10:47:27 UTC; maechler
+NeedsCompilation: yes
+Repository: CRAN
+Date/Publication: 2015-01-14 14:37:40
+Built: R 3.1.3; x86_64-w64-mingw32; 2015-03-19 23:38:03 UTC; windows
+Archs: i386, x64

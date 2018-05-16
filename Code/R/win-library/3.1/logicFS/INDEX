@@ -1,0 +1,21 @@
+data.logicfs            Example Data of logicFS
+getMatEval              Evaluate Prime Implicants
+logic.bagging           Bagged Logic Regression
+logic.oob               Prime Implicants
+logic.pimp              Prime Implicants
+logicFS                 Feature Selection with Logic Regression
+make.snp.dummy          SNPs to Dummy Variables
+mlogreg                 Multinomial Logic Regression
+plot.logicFS            Variable Importance Plot
+predict.logicBagg       Predict Method for logicBagg objects
+predict.mlogreg         Predict Method for mlogreg Objects
+print.logicFS           Print a logicFS object
+vim.approxPval          Approximate P-Value Based Importance Measure
+vim.chisq               ChiSquare Based Importance
+vim.ebam                EBAM Based Importance
+vim.input               VIM for Inputs
+vim.logicFS             Importance Measures
+vim.norm                Standardized and Sign-Permutation Based
+                        Importance Measure
+vim.permSNP             Permutation Based Importance Measures
+vim.set                 VIM for SNPs and Sets of Variables

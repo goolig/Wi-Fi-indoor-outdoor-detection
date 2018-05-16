@@ -1,0 +1,13 @@
+DSA.control	partDSA
+dumpDSA	dumpDSA
+loglevel	loglevel
+partDSA	partDSA
+predict.dsa	predict.partDSA
+print.dsa	print.partDSA
+print.partDSA	print.partDSA
+showDSA	showDSA
+showDSA.character	showDSA
+showDSA.dsa	showDSA
+trim	trim
+trim.dsa	trim
+trim.partDSA	trim

@@ -1,0 +1,7 @@
+cubist.default          Fit a Cubist model
+cubistControl           Various parameters that control aspects of the
+                        Cubist fit.
+dotplot.cubist          Visualization of Cubist Rules and Equations
+exportCubistFiles       Export Cubist Information To the File System
+predict.cubist          Predict method for cubist fits
+summary.cubist          Summarizing Cubist Fits

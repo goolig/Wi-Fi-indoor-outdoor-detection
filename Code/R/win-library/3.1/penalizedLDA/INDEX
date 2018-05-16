@@ -1,0 +1,8 @@
+PenalizedLDA            Perform penalized linear discriminant analysis
+                        using L1 or fused lasso penalties.
+PenalizedLDA.cv         Perform cross-validation for penalized linear
+                        discriminant analysis.
+penalizedLDA-package    Penalized linear discriminant analysis using
+                        lasso and fused lasso penalties.
+predict.penlda          Make PenalizedLDA predictions on a new data
+                        set.

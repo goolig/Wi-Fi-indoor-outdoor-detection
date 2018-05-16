@@ -1,0 +1,48 @@
+Changes in Version 1.0-0
+
+  o New release accompanying the paper about evtree in the Journal of
+    Statistical Software, see citation("evtree").
+
+  o Replaced C level random number generator rand() with R random number
+    handing and the unif_rand() function.
+
+
+Changes in Version 0.1-5
+
+  o Updated contact data.
+
+  o CRAN checks showed memory access errors. These are fixed now.
+
+
+Changes in Version 0.1-4
+
+  o Updated contact data.
+
+  o Updated test output for examples and vignette for improved package checks.
+
+
+Changes in Version 0.1-3
+
+  o Improvements in package vignette.
+
+
+Changes in Version 0.1-2
+
+  o Added test output for examples and vignette for improved package checks.
+
+  o Improvements in package vignette.
+  
+  o Added CITATION: working paper on evtree.
+
+
+Changes in Version 0.1-1
+
+  o CRAN checks turned up problems in C++ code on Fedora and Solaris.
+    These are fixed now.
+
+
+Changes in Version 0.1-0
+
+  o First CRAN release.
+  
+  o See vignette("evtree", package = "evtree") for an introduction.

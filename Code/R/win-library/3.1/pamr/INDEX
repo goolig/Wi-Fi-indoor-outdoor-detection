@@ -1,0 +1,63 @@
+khan                    Khan microarray data
+pamr.adaptthresh        A function to adaptive choose threshold scales,
+                        for use in pamr.train
+pamr.batchadjust        A function to mean-adjust microarray data by
+                        batches
+pamr.confusion          A function giving a table of true versus
+                        predicted values, from a nearest shrunken
+                        centroid fit.
+pamr.confusion.survival
+                        Compute confusin matrix from pamr survival fit
+pamr.cv                 A function to cross-validate the nearest
+                        shrunken centroid classifier
+pamr.decorrelate        A function to decorrelate (adjust) the feature
+                        matrix with respect to some additional
+                        predictors
+pamr.fdr                A function to estimate false discovery rates
+                        for the nearest shrunken centroid classifier
+pamr.from.excel         A function to read in a text file saved from
+                        Excel
+pamr.geneplot           A function to plot the genes that surive the
+                        thresholding from the nearest shrunken centroid
+                        classifier
+pamr.indeterminate      A function that takes estimate class
+                        probabilities and produces a class prediction
+                        or indeterminate prediction
+pamr.knnimpute          A function to impute missing expression data
+pamr.listgenes          A function to list the genes that survive the
+                        thresholding, from the nearest shrunken
+                        centroid classifier
+pamr.makeclasses        A function to interactively define classes from
+                        a clustering tree
+pamr.menu               A function that interactively leads the user
+                        through a PAM analysis
+pamr.plotcen            A function to plot the shrunken class
+                        centroids, from the nearest shrunken centroid
+                        classifier
+pamr.plotcv             A function to plot the cross-validated error
+                        curves from the nearest shrunken centroid
+                        classifier
+pamr.plotcvprob         A function to plot the cross-validated sample
+                        probabilities from the nearest shrunken
+                        centroid classifier
+pamr.plotfdr            A function to plot the FDR curve from the
+                        nearest shrunken centroid classifier
+pamr.plotstrata         A function to plot the survival curves in each
+                        Kaplan Meier stratum
+pamr.plotsurvival       A function to plots Kaplan-Meier curves
+                        stratified by a group variable
+pamr.predict            A function giving prediction information, from
+                        a nearest shrunken centroid fit.
+pamr.predictmany        A function giving prediction information for
+                        many threshold values, from a nearest shrunken
+                        centroid fit.
+pamr.surv.to.class2     A function to assign observations to
+                        categories, based on their survival times.
+pamr.test.errors.surv.compute
+                        A function giving a table of true versus
+                        predicted values, from a nearest shrunken
+                        centroid fit from survival data.
+pamr.to.excel           A function to write out a data object into a
+                        tab-delimited text file
+pamr.train              A function to train a nearest shrunken centroid
+                        classifier

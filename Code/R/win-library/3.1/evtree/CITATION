@@ -1,0 +1,21 @@
+citHeader("To cite evtree in publications use:")
+
+citEntry(entry = "Article",
+  title        = "{evtree}: Evolutionary Learning of Globally Optimal Classification and Regression Trees in {R}",
+  author       = personList(as.person("Thomas Grubinger"),
+                   as.person("Achim Zeileis"),
+                   as.person("Karl-Peter Pfeiffer")),
+  journal      = "Journal of Statistical Software",
+  year         = "2014",
+  volume       = "61",
+  number       = "1",
+  pages        = "1--29",
+  url          = "http://www.jstatsoft.org/v61/i01/",
+
+  textVersion  =
+  paste("Thomas Grubinger, Achim Zeileis, Karl-Peter Pfeiffer (2014).",
+        "evtree: Evolutionary Learning of Globally Optimal Classification and Regression Trees in R.",
+        "Journal of Statistical Software, 61(1), 1-29.",
+        "URL http://www.jstatsoft.org/v61/i01/.")
+)
+

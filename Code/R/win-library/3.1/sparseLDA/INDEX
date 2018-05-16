@@ -1,0 +1,6 @@
+normalize               Normalize training data
+normalizetest           Normalize test data
+penicilliumYES          Data set of three species of Penicillium fungi
+predict.sda             Predict method for Sparse Discriminant Methods
+sda                     Sparse discriminant analysis
+smda                    Sparse mixture discriminant analysis

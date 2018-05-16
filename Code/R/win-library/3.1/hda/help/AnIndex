@@ -1,0 +1,7 @@
+hda	hda
+hda.default	hda
+hda.formula	hda
+plot.hda	plot.hda
+predict.hda	predict.hda
+print.hda	hda
+showloadings	showloadings

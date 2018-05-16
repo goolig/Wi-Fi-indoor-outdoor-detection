@@ -1,0 +1,11 @@
+oblique.tree library
+====================
+
+oblique.tree			Fit an Oblique Tree to classification data
+predict.oblique.tree		Predictions from a fitted oblique tree object
+prune.oblique.tree		Cost-complexity pruning of oblique tree object
+cv.oblique.tree			Cross-validation for choosing tree complexity
+trim.oblique.tree		Trims an oblique tree object
+plot.tree.sequence       	Plot a Tree Sequence
+
+

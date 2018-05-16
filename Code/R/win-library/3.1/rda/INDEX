@@ -1,0 +1,8 @@
+brain		Brain cancer microarray data;
+colon		Conlon cancer microarray data;
+genelist.rda    Shrunken gene listing function;
+plot.rdacv	RDA cross-validation object plotting function;
+predict.rda	RDA predicting function;
+rda             RDA training function;
+rda.cv          RDA cross-validation function;
+

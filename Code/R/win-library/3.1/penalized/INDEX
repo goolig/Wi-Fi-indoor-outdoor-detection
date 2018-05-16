@@ -1,0 +1,11 @@
+breslow-class           Breslow estimator object
+contr.none              Contrast functions for penalized regression
+cvl                     Cross-validated penalized regression
+nki70                   The 70 gene signature of the Netherlands Cancer
+                        Institute for prediction of metastasis-free
+                        survival, measured on 144 independent lymph
+                        node positive patients.
+penalized               Penalized regression
+penfit-class            Penalized regression object
+plotpath                Plotting the LASSO path
+predict,penfit-method   Prediction based on penfit objects

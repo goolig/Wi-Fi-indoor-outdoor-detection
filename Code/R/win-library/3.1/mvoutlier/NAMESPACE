@@ -1,0 +1,21 @@
+# Import all packages listed as Imports or Depends
+import(sgeostat)
+
+
+## Imports:
+#importFrom("compositions",ilrBase)
+importFrom("robCompositions",isomLR)
+importFrom("robustbase",covMcd)
+#importFrom("sgeostat",in.polygon)
+#useDynLib("sgeostat",myRoutine_sym=inplg)
+
+## Exported functions:
+#export(aq.plot,arw,chisq.plot,color.plot,corr.plot,dd.plot,map.plot,mvoutlier.CoDa,
+#       pbb,pcout,pkb,plot.mvoutlierCoDa,sign1,sign2,symbol.plot,uni.plot,locoutNeighbor,
+#       locoutPercent,locoutSort)
+
+# Export all names
+exportPattern(".")
+S3method(plot, mvoutlierCoDa)
+
+

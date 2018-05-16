@@ -1,0 +1,115 @@
+RSNNS-package           Getting started with the RSNNS package
+SnnsR-class             The main class of the package
+SnnsRObject$createNet   Create a layered network
+SnnsRObject$createPatSet
+                        Create a pattern set
+SnnsRObject$extractNetInfo
+                        Get characteristics of the network.
+SnnsRObject$extractPatterns
+                        Extract the current pattern set to a matrix
+SnnsRObject$genericPredictCurrPatSet
+                        Predict values with a trained net
+SnnsRObject$getAllHiddenUnits
+                        Get all hidden units of the net
+SnnsRObject$getAllInputUnits
+                        Get all input units of the net
+SnnsRObject$getAllOutputUnits
+                        Get all output units of the net.
+SnnsRObject$getAllUnits
+                        Get all units present in the net.
+SnnsRObject$getAllUnitsTType
+                        Get all units in the net of a certain 'ttype'.
+SnnsRObject$getCompleteWeightMatrix
+                        Get the complete weight matrix.
+SnnsRObject$getInfoHeader
+                        Get an info header of the network.
+SnnsRObject$getSiteDefinitions
+                        Get the sites definitions of the network.
+SnnsRObject$getTypeDefinitions
+                        Get the FType definitions of the network.
+SnnsRObject$getUnitDefinitions
+                        Get the unit definitions of the network.
+SnnsRObject$getUnitsByName
+                        Find all units whose name begins with a given
+                        prefix.
+SnnsRObject$getWeightMatrix
+                        Get the weight matrix between two sets of units
+SnnsRObject$initializeNet
+                        Initialize the network
+SnnsRObject$predictCurrPatSet
+                        Predict values with a trained net
+SnnsRObject$resetRSNNS
+                        Reset the SnnsR object.
+SnnsRObject$setTTypeUnitsActFunc
+                        Set the activation function for all units of a
+                        certain ttype.
+SnnsRObject$setUnitDefaults
+                        Set the unit defaults
+SnnsRObject$somPredictComponentMaps
+                        Calculate the som component maps
+SnnsRObject$somPredictCurrPatSetWinners
+                        Get most of the relevant results from a som
+SnnsRObject$somPredictCurrPatSetWinnersSpanTree
+                        Get the spanning tree of the SOM
+SnnsRObject$train       Train a network and test it in every training
+                        iteration
+SnnsRObject$whereAreResults
+                        Get a list of output units of a net
+SnnsRObjectFactory      SnnsR object factory
+SnnsRObjectMethodCaller
+                        Method caller for SnnsR objects
+analyzeClassification   Converts continuous outputs to class labels
+art1                    Create and train an art1 network
+art2                    Create and train an art2 network
+artmap                  Create and train an artmap network
+assoz                   Create and train an (auto-)associative memory
+confusionMatrix         Computes a confusion matrix
+decodeClassLabels       Decode class labels to a binary matrix
+denormalizeData         Revert data normalization
+dlvq                    Create and train a dlvq network
+elman                   Create and train an Elman network
+encodeClassLabels       Encode a matrix of (decoded) class labels
+exportToSnnsNetFile     Export the net to a file in the original SNNS
+                        file format
+extractNetInfo          Extract information from a network
+getNormParameters       Get normalization parameters of the input data
+getSnnsRDefine          Get a define of the SNNS kernel
+getSnnsRFunctionTable   Get SnnsR function table
+inputColumns            Get the columns that are inputs
+jordan                  Create and train a Jordan network
+matrixToActMapList      Convert matrix of activations to activation map
+                        list
+mlp                     Create and train a multi-layer perceptron (MLP)
+normTrainingAndTestSet
+                        Function to normalize training and test set
+normalizeData           Data normalization
+outputColumns           Get the columns that are targets
+plotActMap              Plot activation map
+plotIterativeError      Plot iterative errors of an rsnns object
+plotROC                 Plot a ROC curve
+plotRegressionError     Plot a regression error plot
+predict.rsnns           Generic predict function for rsnns object
+print.rsnns             Generic print function for rsnns objects
+rbf                     Create and train a radial basis function (RBF)
+                        network
+rbfDDA                  Create and train an RBF network with the DDA
+                        algorithm
+readPatFile             Load data from a pat file
+readResFile             Rudimentary parser for res files.
+resolveSnnsRDefine      Resolve a define of the SNNS kernel
+rsnnsObjectFactory      Object factory for generating rsnns objects
+savePatFile             Save data to a pat file
+setSnnsRSeedValue       DEPRECATED, Set the SnnsR seed value
+snnsData                Example data of the package
+som                     Create and train a self-organizing map (SOM)
+splitForTrainingAndTest
+                        Function to split data into training and test
+                        set
+summary.rsnns           Generic summary function for rsnns objects
+toNumericClassLabels    Convert a vector (of class labels) to a numeric
+                        vector
+train                   Internal generic train function for rsnns
+                        objects
+vectorToActMap          Convert a vector to an activation map
+weightMatrix            Function to extract the weight matrix of an
+                        rsnns object

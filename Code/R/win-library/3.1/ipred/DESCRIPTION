@@ -1,0 +1,29 @@
+Package: ipred
+Title: Improved Predictors
+Version: 0.9-4
+Date: 2015-02-20
+Authors@R: c(person("Andrea", "Peters", role = "aut"),
+             person("Torsten", "Hothorn", role = c("aut", "cre"),
+                    email = "Torsten.Hothorn@R-project.org"),
+             person("Brian D.", "Ripley", role = "ctb"),
+             person("Terry", "Therneau", role = "ctb"), 
+             person("Beth", "Atkinson", role = "ctb"))
+Description: Improved predictive models by indirect classification and
+  bagging for classification, regression and survival problems 
+  as well as resampling based estimators of prediction error. 
+Depends: R (>= 2.10)
+Imports: rpart (>= 3.1-8), MASS, survival, nnet, class, prodlim
+Suggests: mvtnorm, mlbench, TH.data
+License: GPL (>= 2)
+Packaged: 2015-02-24 14:23:05 UTC; hothorn
+Author: Andrea Peters [aut],
+  Torsten Hothorn [aut, cre],
+  Brian D. Ripley [ctb],
+  Terry Therneau [ctb],
+  Beth Atkinson [ctb]
+Maintainer: Torsten Hothorn <Torsten.Hothorn@R-project.org>
+NeedsCompilation: yes
+Repository: CRAN
+Date/Publication: 2015-02-24 15:29:32
+Built: R 3.1.3; x86_64-w64-mingw32; 2015-03-20 00:26:24 UTC; windows
+Archs: i386, x64

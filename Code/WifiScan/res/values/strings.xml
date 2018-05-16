@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IO Collector</string>
+    <string name="menu_settings">Settings</string>
+    <string name="Title">IO Collector</string>
+    <string name="deviceID">Device Name</string>
+    <string name="h1">Location</string>
+    <string name="h2">Location Level 2</string>
+    <string name="h3">Location Level 3</string>
+    <string name="set">OK</string>
+    <string name="record"> Record Labels
+    </string>
+    <string name="indoors">Indoors
+    </string>
+
+    <string name="menuStart">Start
+    </string>
+    <string name="menuStop">Stop
+    </string>
+
+    <string name="mistake1">Cancel Last Minute
+    </string>
+    <string name="mistake10">Cancel Last Ten Minutes
+    </string>
+    <string name="mistake60">Cancel Last Hour
+    </string>
+    <string name="mistake300">Cancel Last Five Hours
+    </string>
+    <string name="mistake1440">Cancel Last Day
+    </string>
+
+    <string name="scanIsAlreadyOn">Scan Is Already On
+    </string>
+    <string name="scanIsAlreadyOff">Scan Is Already Off
+    </string>
+
+
+</resources>

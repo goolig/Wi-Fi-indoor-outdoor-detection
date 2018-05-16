@@ -1,0 +1,223 @@
+%\VignetteIndexEntry{logicFS Manual}
+%\VignetteKeywords{Feature Selection}
+%\VignetteDepends{logicFS}
+%\VignettePackage{logicFS}
+
+
+\documentclass[a4paper]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+
+
+\setlength{\parindent}{0cm} \setlength{\parskip}{12pt}
+
+\renewcommand{\baselinestretch}{1.1}
+
+\newcommand{\us}{{\small$\underline{\ \,}$}\hspace{1.5pt}}  % underscore
+
+
+\begin{document}
+\title{Identifying interesting SNP interactions with
+\texttt{logicFS}}
+
+\author{Holger Schwender\\  holger.schwender@udo.edu}
+\date{}
+
+\maketitle
+
+\vspace*{0.5cm}
+
+\section{Introduction}
+
+Logic regression proposed by Ruczinski et al.\ (2003)
+is a classification method that attempts to predict the
+case-control status based on Boolean combinations of
+binary variables. It has already been successfully applied to
+SNP data by Kooperberg et al.\ (2001).
+
+This package contains functions that use logic regression
+as a wrapper to identify interesting combinations of binary
+variables and to measure the importance of these interactions.
+A description of the used methods is given in Schwender and Ickstadt (2006).
+Even though the intended purpose of this package is the identification of
+SNP interactions, it can also be applied to other types
+of binary (or categorical) data.   
+
+\texttt{logicFS} also contains a first basic Bagging version
+of the logic regression and a fast implementation of the 
+Quine-McCluskey algorithm based on matrix algebra. The latter
+is described in Schwender (2006) and can be used to identify 
+a minimum disjunctive normal form of a given truth table.
+
+\section{SNP Data and their Transformation into Dummy Variables}\label{data}
+
+As always, the package has to be loaded.
+
+<<>>=
+library(logicFS)
+@
+
+As example data set, we use the data set contained in \texttt{logicFS}.
+
+<<>>=
+data(data.logicfs)
+@
+
+\texttt{data(data.logicfs)} consists of two objects: A simulated matrix, \texttt{data.logicfs},
+containing the data of 15 variables (columns) and 400 observations (rows) and
+a vector, \texttt{cl.logicfs}, consisting of the class labels of the 400 observations.
+
+Each of the variables in \texttt{data.logicfs} is categorical and can take the realizations 1, 2 and 3.
+The class label of the first 200 observations is 1 (for case) and the class label
+of the remaining observations is 0 (for control). If one of the following expression
+is \texttt{TRUE}, then the corresponding observation is a case:
+
+\begin{itemize}
+\item[] SNP1 == 3
+\item[] SNP2 == 1  \&  SNP4 == 3
+\item[] SNP3 == 3  \&  SNP5 == 3  \&  SNP6 == 1
+\end{itemize}
+
+where SNP1 is in the first column of \texttt{data.logicfs}, SNP2 in the second, and so on.
+
+Even though the variables are called SNPs, these variables have not been generated
+by an algorithm for simulating SNP data. So most of the values of a variable can, e.g.,
+be 3 even though 3 should actually code the homozygous variant genotype.
+
+Logic regression and hence the functions in \texttt{logicFS} can only handle binary
+predictors. So the categorical SNP variables have to be transformed into two binary
+dummy variables. If the homozygous reference genotype of the SNPs is coded by 1, the
+heterozygous genotype by 2 and the homozygous variant type by 3, then the function
+\texttt{make.snp.dummy} can be used to code these SNPs. Thus, a binary 
+representation of the variables in \texttt{data.logicfs} can be obtained by
+
+<<>>=
+bin.snps<-make.snp.dummy(data.logicfs)
+@
+
+
+\section{Feature Selection Using Logic Regression}\label{fs}
+
+The binary dummy variables in \texttt{bin.snps} can now be used in \texttt{logic.fs}
+to identify potentially interesting combinations of these variables and to
+measure the importance of these interactions. Since the default version of the logic
+regression and thus the current version of \texttt{logic.fs} is based on 
+simulated annealing, we set
+
+<<>>=
+my.anneal<-logreg.anneal.control(start=2, end=-2, iter=10000)
+@
+
+and the number \texttt{B} of considered logic regression models to 20
+to speed up the computation. The feature selection is then performed by
+
+<<>>=
+log.out<-logicFS(bin.snps, cl.logicfs, B=20, nleaves=10, rand=123, anneal.control=my.anneal)
+@
+
+where we allow that a maximum of \texttt{nleaves} $=10$ variables is in the
+logic regression models and set \texttt{rand} to 123 to make the results
+of this vignette reproducible.
+
+The output of \texttt{logicFS} is given by
+
+<<>>=
+log.out
+@
+
+Not very surprisingly, only the interactions shown in Section \ref{data}
+have a high importance, where, e.g., \texttt{!SNP2\us 1} stands
+for NOT SNP2\us 1, i.e.\ SNP2\us $1=0$. Thus, the logic expression 
+\texttt{!SNP2\us 1 \& SNP4\us 2} means ``SNP2 is of the homozygous
+reference genotype and SNP4 is of the homozygous variant genotype."
+
+As displayed in Figure 1, the variable importance can be plotted by
+
+<<eval=FALSE>>=
+plot(log.out)
+@
+
+Since the names of SNPs are usually pretty long, coded names are used in
+the plot, where \texttt{X1} codes the first variable in \texttt{data},
+\texttt{X2} the second, and so on. The original variable names are
+displayed in the plot if \texttt{coded} is set to \texttt{FALSE} in
+\texttt{plot}.
+
+In the above analysis, the single tree approach of the logic regression is
+used. It is, however, also possible to perform a multiple tree analysis
+by changing the default of \texttt{ntrees}. Note that if this approach is
+applied to \texttt{bin.snps} one will get a lot of warnings (from \texttt{glm})
+because of the structure of this data set (cases are unambiguously 
+classified by the above logic expressions). With other data sets this usually 
+will not happen.
+
+\begin{figure}[!ht]
+\vspace{18pt} \small
+\centerline{
+\includegraphics[width=0.9\textwidth]{logicfs}}\vspace{-10pt}
+\caption{Variable Importance Plot}
+\end{figure}
+
+\section{Bagged Logic Regression}
+
+A first basic Bagging version of the logic regression is implemented
+in the function \texttt{logic.bagging}. Similar to the analysis with
+\texttt{logic.fs} \texttt{logic.bagging} is applied to \texttt{bin.snps} by
+
+<<>>=
+bag.out<-logic.bagging(bin.snps, cl.logicfs, B=20, nleaves=10, rand=123, anneal.control=my.anneal)
+bag.out
+@
+
+By default, both the out-of-bag error (\texttt{obb=TRUE}) and the importance 
+of the variable combinations (\texttt{importance=TRUE}) are computed. The results
+of Section \ref{fs} can also be obtained by
+
+<<>>=
+bag.out$vim
+@
+
+and the importance can be plotted either by \texttt{plot(bag.out\$vim)} or simply
+by \texttt{plot(bag.out)}.
+
+The class of a new observation is predicted by majority voting and can be computed by
+
+<<>>=
+cl.preds<-predict(bag.out,bin.snps)
+@
+
+where we here assume that \texttt{bin.snps} contains the new observations. The 
+misclassification rate is then computed by
+
+<<>>=
+mean(cl.preds!=cl.logicfs)
+@
+
+Warning: There is currently no checking if the data set, \texttt{newbin}, containing
+the new observations and \texttt{data} in \texttt{logic.bagging} contain the same
+variables in the same order.
+
+
+
+\begin{thebibliography}{}
+\item[Kooperberg, C.,] Ruczinski, I., LeBlanc, M., and Hsu, L.\ (2001).
+Sequence Analysis Using Logic Regression. \textit{Genetic
+Epidemiology}, 21, 626--631.
+
+\item[Ruczinski, I.,] Kooperberg, C., and LeBlanc, M.\ (2003).
+Logic Regression.
+\textit{Journal of the Computational and Graphical Statistics}, 12,
+475--511.
+
+\item[Schwender, H.\ (2006).] Minimization of Boolean Expressions Using Matrix Algebra.
+\textit{Technical Report}, SFB 475, University of Dortmund, Germany.
+
+\item[Schwender, H.,] and Ickstadt, K.\ (2006).
+Identification of SNP Interactions Using Logic Regression.
+\textit{Technical Report}, SFB 475, University of Dortmund, Germany.
+
+
+\end{thebibliography}
+
+
+\end{document}

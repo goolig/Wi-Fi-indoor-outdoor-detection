@@ -1,0 +1,9 @@
+fitfun                  Fit Functions for Stability Selection
+parameters              Method to Extract Parameters
+plot.stabsel            Plot and Print Methods for Stability Selection
+run_stabsel             Run Stability Selection
+selected                Method to Extract Selected Variables
+stabsel                 Stability Selection
+stabsel.stabsel         Change Parameters of Stability Selection
+stabsel_parameters      Compute Error Bounds for Stability Selection
+subsample               Draw Random Subsamples

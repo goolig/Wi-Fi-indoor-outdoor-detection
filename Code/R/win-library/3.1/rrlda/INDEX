@@ -1,0 +1,4 @@
+predict.rrlda           Class Prediction for rrlda objects
+rrest                   Robust Regularized Estimator (RegMCD) for
+                        location and inverse scatter
+rrlda                   Robust Regularized Linear Discriminant Analysis

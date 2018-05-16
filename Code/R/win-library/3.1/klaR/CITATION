@@ -1,0 +1,24 @@
+citHeader("To cite klaR in publications use:")
+
+citEntry(entry       = "inproceedings",
+    title        = "klaR Analyzing German Business Cycles",
+    author       = c(
+            person(given="Claus", family="Weihs", email="weihs@statistik.tu-dortmund.de"),
+            person(given="Uwe", family="Ligges", email="Uwe.Ligges@R-project.org"),
+            person(given="Karsten", family="Luebke", email="karsten.luebke@fom.de"),
+            person(given="Nils", family="Raabe", email="raabe@statistik.tu-dortmund.de")),
+    booktitle    = "Data Analysis and Decision Support",
+    editor       = c(
+            person(given="D.", family="Baier"),
+            person(given="R.", family="Decker"),
+            person(given="L.", family="Schmidt-Thieme")),
+    publisher    = "Springer-Verlag",
+    address      = "Berlin",
+    year         = 2005,
+    pages        = "335-343",
+    textVersion  = paste("Weihs, C., Ligges, U., Luebke, K. and Raabe, N. (2005).",
+            "klaR Analyzing German Business Cycles.",
+            "In Baier, D., Decker, R. and Schmidt-Thieme, L. (eds.).",
+            "Data Analysis and Decision Support, 335-343,",
+            "Springer-Verlag, Berlin.")
+    )

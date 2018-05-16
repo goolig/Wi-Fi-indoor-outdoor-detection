@@ -1,0 +1,15 @@
+Package: LogicReg
+Version: 1.5.6
+Date: 2015-01-22
+Title: Logic Regression
+Author: Charles Kooperberg <clk@fredhutch.org> and Ingo Ruczinski <ingo@jhu.edu>
+Maintainer: Charles Kooperberg <clk@fredhutch.org>
+Depends: R (>= 2.10), survival
+Description: Routines for Logic Regression
+License: GPL (>= 2)
+Packaged: 2015-01-22 21:25:07 UTC; clk
+NeedsCompilation: yes
+Repository: CRAN
+Date/Publication: 2015-01-23 08:52:04
+Built: R 3.1.3; x86_64-w64-mingw32; 2015-03-10 11:22:08 UTC; windows
+Archs: i386, x64

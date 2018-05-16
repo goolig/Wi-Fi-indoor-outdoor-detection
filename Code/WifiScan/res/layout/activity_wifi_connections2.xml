@@ -1,0 +1,150 @@
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".WifiConnections">
+
+    <TextView
+            android:textSize="20sp"
+            android:id="@+id/mainText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Title"
+            android:layout_margin="1dp"
+            android:gravity="center"
+            />
+    <ImageView
+            android:id="@+id/mainImageView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/mainText"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/backgrndwhite"
+    />
+    <EditText
+            android:textSize="20sp"
+            android:id="@+id/deviceIDEdit"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mainImageView"
+            android:text=""
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/deviceIDView"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+
+            />
+    <TextView
+            android:textSize="20sp"
+            android:id="@+id/deviceIDView"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mainImageView"
+            android:text="@string/deviceID"
+            android:layout_alignParentRight="true"
+            />
+    <EditText
+            android:textSize="20sp"
+            android:id="@+id/deviceH1Edit"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/deviceIDEdit"
+            android:text=""
+            android:layout_alignParentLeft="true"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+
+            />
+    <TextView
+            android:textSize="20sp"
+
+            android:id="@+id/deviceH1View"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/deviceH1Edit"
+            android:layout_below="@id/deviceIDView"
+            android:text="@string/h1"
+            android:layout_alignParentRight="true"
+            />
+
+    <EditText
+            android:textSize="20sp"
+            android:id="@+id/deviceH2Edit"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/deviceH1Edit"
+            android:text=""
+            android:layout_alignParentLeft="true"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+
+            />
+    <TextView
+            android:textSize="20sp"
+            android:layout_alignTop="@id/deviceH2Edit"
+
+            android:id="@+id/deviceH2View"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/deviceH1View"
+            android:text="@string/h2"
+            android:layout_alignParentRight="true"
+            />
+    <EditText
+            android:textSize="20sp"
+            android:id="@+id/deviceH3Edit"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/deviceH2Edit"
+            android:text=""
+            android:layout_alignParentLeft="true"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+
+            />
+
+
+
+    <TextView
+            android:textSize="20sp"
+            android:id="@+id/deviceH3View"
+            android:layout_alignTop="@id/deviceH3Edit"
+
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/deviceH2View"
+            android:text="@string/h3"
+            android:layout_alignParentRight="true"
+            />
+        <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/deviceH3Edit"
+                android:text="@string/set"
+                android:imeOptions="actionNext"
+                />
+    <CheckBox
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/record"
+            android:id="@+id/ckbRecordLabels"
+            android:layout_below="@+id/btnSubmit"
+           />
+        <CheckBox
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/indoors"
+                android:id="@+id/ckbInside"
+                android:layout_below="@+id/ckbRecordLabels"
+                />
+
+</RelativeLayout>

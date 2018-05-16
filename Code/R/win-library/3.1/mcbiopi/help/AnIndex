@@ -1,0 +1,7 @@
+evalTree	generateTruthTab
+generateTruthTab	generateTruthTab
+getPImps	generateTruthTab
+minDNF	minDNF
+prime.implicants	prime.implicants
+print.minDNF	minDNF
+print.primeImp	prime.implicants

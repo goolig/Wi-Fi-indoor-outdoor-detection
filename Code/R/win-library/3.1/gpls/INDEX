@@ -1,0 +1,15 @@
+glpls1a                 Fit IRWPLS and IRWPLSF model
+glpls1a.cv.error        Leave-one-out cross-validation error using
+                        IRWPLS and IRWPLSF model
+glpls1a.logit.all       Fit MIRWPLS and MIRWPLSF model separately for
+                        logits
+glpls1a.mlogit          Fit MIRWPLS and MIRWPLSF model
+glpls1a.mlogit.cv.error
+                        Leave-one-out cross-validation error using
+                        MIRWPLS and MIRWPLSF model
+glpls1a.train.test.error
+                        out-of-sample test set error using IRWPLS and
+                        IRWPLSF model
+gpls                    A function to fit Generalized partial least
+                        squares models.
+predict.gpls            A prediction method for gpls.

@@ -1,0 +1,15 @@
+export(
+"catscore",
+"centroids",
+"plot.sda.ranking",
+"predict.sda",
+"sda",
+"sda.ranking"
+)
+S3method("predict", "sda")
+S3method("plot", "sda.ranking")
+import(
+"corpcor", 
+"entropy",
+"fdrtool"
+)

@@ -1,0 +1,19 @@
+bdk                     Supervised version of Kohonen's self-organising
+                        maps
+check.whatmap           Check the validity of a whatmap argument
+classvec2classmat       Convert a classification vector into a matrix
+                        or the other way around.
+map.kohonen             Map data to a supervised or unsupervised SOM
+nir                     Near-infrared data with temperature effects
+plot.kohonen            Plot kohonen object
+predict.kohonen         Predict properties using a trained Kohonen map
+som                     Kohonen's self-organising maps
+summary.kohonen         Summary and print methods for kohonen objects
+supersom                Super-organising maps
+topo.error              Measures of topographical error
+tricolor                Provides smooth unit colors for SOMs
+unit.distances          Calculate distances between units in a SOM
+wines                   Wine data
+xyf                     Supervised version of Kohonen's self-organising
+                        maps
+yeast                   Yeast cell-cycle data

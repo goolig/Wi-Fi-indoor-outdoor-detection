@@ -1,0 +1,172 @@
+
+               RELEASE HISTORY OF THE "sda" PACKAGE
+             ========================================
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.3.6
+
+- fix "S3 generic/method consistency" NOTE raised by R-devel.
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.3.5
+
+- the example R scripts (Khan SRBCT and Singh prostate cancer data) are 
+  now provided in R notebook format.
+- change of maintainer email address.
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.3.4
+
+- change of maintainer email address.
+- corrections to index.html file in inst/doc folder.
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.3.3
+
+- an import() statement has been added to NAMESPACE to address warnings
+  of R 3.1.0.
+- added example scripts for Singh et al. (2001) and Khan et al. (2002)
+  gene expression data.
+- now suggests "crossval" package for estimating prediction accuracy.
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.3.2
+
+- sda() now also works with a single predictor (previously two predictors
+  were necessary).
+
+- plot.sda.ranking() now has three new options to allow customization
+  (zeroaxis.col, ylab, and main).
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.3.1
+
+- centroids() now also estimates class frequencies (in addition to
+  simply reporting the samples size per class). The frequencies are
+  estimated using a shrinkage approach (set lambda.freqs=0 for empirical
+  estimates).  The pooled mean is now computed using the estimated
+  frequencies.
+
+- catscore() now has a lambda.freqs argument and uses shrinkage
+  estimates of class frequencies to compute the scaling factor
+  (to use empirical scaling factors set lambda.freqs=0).
+
+- the estimated frequencies returned by sda() are now contained
+  in the variable "freqs" (which previously was called "prior").
+
+- in sda.ranking() there is now also a lambda.freqs argument
+
+- in addition, sda.ranking() now offers three types of summary 
+  statistics for ranking variables in the multi-class case.
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.3.0
+
+- predict.sda() has been rewritten and is now *much* faster for large 
+  numbers of test samples.
+- the format of object returned by sda() has changed for more efficient
+  prediction.  Note that it is *not* compatible with earlier versions.
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.2.4
+
+- License file removed.
+- Dependencies updated.
+- plot.sda.ranking() is not based on "lattice" graphics any more
+  (new code contributed by Sebastian Gibb).
+- sda() now allows to specify the shrinkage intensity for the 
+  class frequencies.
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.2.3
+
+- plot.sda.ranking() now checks for duplicated row names.
+- feature.idx argument removed from predict.sda() function. 
+- sda.ranking() now allows to specify lambda and lambda.var
+  as in the catscore() function.
+- sda() also has parameters to set lambda and lambda.var,
+  as well as shrink.freqs=TRUE/FALSE.
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.2.2
+
+- centroids() function allows to specify the shrinkage intensity 
+  for estimating the variances.  Default is now shrinkage rather than
+  empirical estimates.
+- catscore() also includes options to specifify shrinkage intensities.
+  The default is now using shrinkage rather empirical estimates.
+- sda.ranking() now uses fdrtool to compute higher criticism scores
+- in the output of sda(), the order of entries in the regularization
+  vector is now lambda, lambda.var, lambda.freqs.
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.2.1
+
+- NAMESPACE file added
+- updated requirements for "corpcor" and "entropy"
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.2.0
+
+- requires now corpcor 1.6.0 and R version 2.10.0 
+- new function catscore()
+- centroids() function has been streamlined and simplified
+- updated documentation
+- employs function crossprod.powcor.shrink() of corpcor
+  which leads to reduced memory imprint and increased speed
+  in functions catscore(), sda.ranking() and sda()
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.1.0 
+
+- new sda.ranking() function
+- plot function for "sda.ranking" objects 
+- additional to FDR values computation of higher-criticism scores
+- reference to Ahdesm\"aki and Strimmer (2009) paper added
+- Singh et al. (2002) example data added
+- improved help pages and examples
+- the data khan.x is now on log-scale
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.0.3 
+
+- sda() now provides ranking of features.
+- fdr values can optionally be computed for each feature.
+- centroids() now reports number of samples and features.
+- sda() function has been rewritten, and a bug introduced in 
+  version 1.0.2 has been corrected.
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.0.2 
+
+- predict.sda() is now very much faster, and the object returned
+  by sda() needs much less memory.  
+- the centroids() function now additionally computes the pooled mean and 
+  arbitrary powers of the correlation matrix (not just alpha=-1).
+- the microarray data from Khan et al. 2001 are now used as example.
+- bug fix: for shrinkage DDA the inverse correlation matrix is not
+  computed unnecessarily any more.
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.0.1 
+
+- new centroids() function to compute group-wise centroids,
+  (pooled variances), and inverse pooled correlations. 
+- uses the "collapse" option in corpcor >= 1.4.8 to save
+  memory when estimated correlation is diagonal (effectively
+  turning LDA into DDA if the estimated shrinkage intensity lambda=1).
+
+
+              CHANGES IN `sda' PACKAGE VERSION 1.0.0
+
+
+This package implements LDA and DDA classification,
+where the training of the classifier is done via Stein-type
+shrinkage of frequencies, variances, and correlation.
+
+This approach is particularly suitable for high-dimensional 
+classification.
+
+
+This is the first public release (27 October 2008).
+

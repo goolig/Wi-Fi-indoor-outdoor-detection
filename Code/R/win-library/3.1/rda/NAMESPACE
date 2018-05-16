@@ -1,0 +1,9 @@
+export(
+  genelist.rda,
+  plot.rdacv,
+  predict.rda,
+  rda,
+  rda.cv)
+S3method(print, rda)
+S3method(print, rdacv)
+

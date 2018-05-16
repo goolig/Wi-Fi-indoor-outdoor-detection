@@ -1,0 +1,12 @@
+glpls1a	glpls1a
+glpls1a.cv.error	glpls1a.cv.error
+glpls1a.logit.all	glpls1a.logit.all
+glpls1a.mlogit	glpls1a.mlogit
+glpls1a.mlogit.cv.error	glpls1a.mlogit.cv.error
+glpls1a.train.test.error	glpls1a.train.test.error
+gpls	gpls
+gpls.default	gpls
+gpls.formula	gpls
+predict,gpls-method	predict.gpls
+predict.gpls	predict.gpls
+print.gpls	gpls

@@ -1,0 +1,19 @@
+MarginOrderedPruning.Bagging
+                        MarginOrderedPruning.Bagging
+adabag-package          Applies Multiclass AdaBoost.M1, SAMME and
+                        Bagging
+autoprune               Builds automatically a pruned tree of class
+                        'rpart'
+bagging                 Applies the Bagging algorithm to a data set
+bagging.cv              Runs v-fold cross validation with Bagging
+boosting                Applies the AdaBoost.M1 and SAMME algorithms to
+                        a data set
+boosting.cv             Runs v-fold cross validation with AdaBoost.M1
+                        or SAMME
+errorevol               Shows the error evolution of the ensemble
+importanceplot          Plots the variables relative importance
+margins                 Calculates the margins
+plot.errorevol          Plots the error evolution of the ensemble
+plot.margins            Plots the margins of the ensemble
+predict.bagging         Predicts from a fitted bagging object
+predict.boosting        Predicts from a fitted boosting object

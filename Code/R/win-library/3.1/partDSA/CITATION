@@ -1,0 +1,35 @@
+
+citHeader("To cite partDSA in publications use:")
+
+citEntry(entry="Article",
+         Title = "partDSA: Deletion/Substitution/Addition Algorithm for Partitioning the Covariate Space in Prediction",
+         Author = personList(as.person("Annette M. Molinaro"), as.person("Karen Lostritto"), as.person("Mark~J. van der Laan")),
+         Journal = "Bioinformatics",
+         Year = "2010",
+         volume = "26",
+         number = "10",
+         pages = "1357--63",
+        
+         textVersion =
+           paste("Annette M. Molinaro, Karen Lostritto, and Mark J. van der Laan (2010).",
+                 "partDSA: Deletion/Substitution/Addition Algorithm for Partitioning the Covariate Space in Prediction.",
+                 "Bioinformatics, 26(10), 1357--63."),
+         header = "If partDSA() with uncensored data is used cite:"
+)
+
+citEntry(entry="Article",
+         title = "A Partitioning Deletion/Substitution/Addition Algorithm for Creating Survival Risk Groups",
+         author = personList(as.person("Karen Lostritto"), as.person("Robert L. Strawderman"), as.person("Annette M. Molinaro")),
+   journal      = "Biometrics",
+   year         = "2012",
+   volume       = "68",
+   number       = "4",
+   pages        = "1146--56",
+   
+   textVersion =
+     paste("Karen Lostritto, Robert L. Strawderman, and Annette M. Molinaro  (2012).",
+           "A Partitioning Deletion/Substitution/Addition Algorithm for Creating Survival Risk Groups.",
+           "Biometrics, 68(4), 1146--56."),
+   header = "If partDSA with censored data is used cite:"
+)
+

@@ -1,0 +1,13 @@
+Wishlist (formerly TODO):
+
+* different variable importance measures
+* regression
+
+========================================================================
+Version 0.2
+
+* two new node models: random splits and fast ridge regression based on svd (default ridge for now; standard ridge available as ridge_slow)
+
+Version 0.1
+
+* initial import

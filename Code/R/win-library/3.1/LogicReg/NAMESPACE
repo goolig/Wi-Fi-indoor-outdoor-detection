@@ -1,0 +1,11 @@
+# Remove the previous line if you edit this file
+
+useDynLib(LogicReg)
+
+# Export all names
+exportPattern(".")
+
+# Import all packages listed as Imports or Depends
+import(
+  survival
+)

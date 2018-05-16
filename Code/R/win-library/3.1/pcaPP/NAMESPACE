@@ -1,0 +1,10 @@
+useDynLib(pcaPP)
+importFrom(mvtnorm, rmvnorm)
+
+export(PCAgrid, PCAproj, PCdiagplot, ScaleAdv, cor.fk, covPC,
+       covPCAgrid, covPCAproj, data.Zou, l1median, l1median_BFGS,
+       l1median_CG, l1median_HoCr, l1median_NLM, l1median_NM,
+       l1median_VaZh, objplot, opt.BIC, opt.TPO, plotcov, qn, sPCAgrid)
+
+S3method (plot, opt.TPO)
+S3method (plot, opt.BIC)

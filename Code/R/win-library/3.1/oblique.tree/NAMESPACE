@@ -1,0 +1,24 @@
+#load compiled source code attributed to glmpath()
+useDynLib(oblique.tree)
+
+#required from other packages
+import(		tree)				#tree.control(), tree.matrix(), plot.tree(), text.tree(), etc
+importFrom(	glmnet,	glmnet)			#glmnet()
+importFrom(	nnet,	which.is.max)		#which.is.max()
+
+#functions to export when loading the library
+export(		oblique.tree,			#primary functions
+		predict.oblique.tree,
+		prune.oblique.tree,
+		trim.oblique.tree,
+		plot.trim.sequence
+		#cv.oblique.tree
+)
+
+#S3 methods to publish
+S3method(predict, oblique.tree)
+S3method(plot, trim.sequence)
+#S3method(prune, oblique.tree)
+#S3method(trim, oblique.tree)
+#S3method(cv, oblique.tree)
+

@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Neural Networks in R using the Stuttgart Neural Network
+Simulator (SNNS)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+<h1> Neural Networks in R using the Stuttgart Neural Network
+Simulator (SNNS)
+<img class="toplogo" src="../../../doc/html/logo.jpg" alt="[R logo]">
+</h1>
+<hr>
+<div align="center">
+<a href="../../../doc/html/packages.html"><img src="../../../doc/html/left.jpg" alt="[Up]" width="30" height="30" border="0"></a>
+<a href="../../../doc/html/index.html"><img src="../../../doc/html/up.jpg" alt="[Top]" width="30" height="30" border="0"></a>
+</div><h2>Documentation for package &lsquo;RSNNS&rsquo; version 0.4-6</h2>
+
+<ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
+<li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
+<li><a href="../demo">Code demos</a>.  Use <a href="../../utils/help/demo">demo()</a> to run them.</li>
+</ul>
+
+<h2>Help Pages</h2>
+
+
+<p align="center">
+<a href="# "> </a>
+<a href="#A">A</a>
+<a href="#C">C</a>
+<a href="#D">D</a>
+<a href="#E">E</a>
+<a href="#G">G</a>
+<a href="#I">I</a>
+<a href="#J">J</a>
+<a href="#M">M</a>
+<a href="#N">N</a>
+<a href="#O">O</a>
+<a href="#P">P</a>
+<a href="#R">R</a>
+<a href="#S">S</a>
+<a href="#T">T</a>
+<a href="#V">V</a>
+<a href="#W">W</a>
+<a href="#misc">misc</a>
+</p>
+
+<table width="100%">
+<tr><td width="25%"><a href="RSNNS-package.html">RSNNS-package</a></td>
+<td>Getting started with the RSNNS package</td></tr>
+</table>
+
+<h2><a name="A">-- A --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="analyzeClassification.html">analyzeClassification</a></td>
+<td>Converts continuous outputs to class labels</td></tr>
+<tr><td width="25%"><a href="art1.html">art1</a></td>
+<td>Create and train an art1 network</td></tr>
+<tr><td width="25%"><a href="art1.html">art1.default</a></td>
+<td>Create and train an art1 network</td></tr>
+<tr><td width="25%"><a href="art2.html">art2</a></td>
+<td>Create and train an art2 network</td></tr>
+<tr><td width="25%"><a href="art2.html">art2.default</a></td>
+<td>Create and train an art2 network</td></tr>
+<tr><td width="25%"><a href="artmap.html">artmap</a></td>
+<td>Create and train an artmap network</td></tr>
+<tr><td width="25%"><a href="artmap.html">artmap.default</a></td>
+<td>Create and train an artmap network</td></tr>
+<tr><td width="25%"><a href="assoz.html">assoz</a></td>
+<td>Create and train an (auto-)associative memory</td></tr>
+<tr><td width="25%"><a href="assoz.html">assoz.default</a></td>
+<td>Create and train an (auto-)associative memory</td></tr>
+</table>
+
+<h2><a name="C">-- C --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="confusionMatrix.html">confusionMatrix</a></td>
+<td>Computes a confusion matrix</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-createNet.html">createNet-method</a></td>
+<td>Create a layered network</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-createPatSet.html">createPatSet-method</a></td>
+<td>Create a pattern set</td></tr>
+</table>
+
+<h2><a name="D">-- D --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="decodeClassLabels.html">decodeClassLabels</a></td>
+<td>Decode class labels to a binary matrix</td></tr>
+<tr><td width="25%"><a href="denormalizeData.html">denormalizeData</a></td>
+<td>Revert data normalization</td></tr>
+<tr><td width="25%"><a href="dlvq.html">dlvq</a></td>
+<td>Create and train a dlvq network</td></tr>
+<tr><td width="25%"><a href="dlvq.html">dlvq.default</a></td>
+<td>Create and train a dlvq network</td></tr>
+</table>
+
+<h2><a name="E">-- E --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="elman.html">elman</a></td>
+<td>Create and train an Elman network</td></tr>
+<tr><td width="25%"><a href="elman.html">elman.default</a></td>
+<td>Create and train an Elman network</td></tr>
+<tr><td width="25%"><a href="encodeClassLabels.html">encodeClassLabels</a></td>
+<td>Encode a matrix of (decoded) class labels</td></tr>
+<tr><td width="25%"><a href="exportToSnnsNetFile.html">exportToSnnsNetFile</a></td>
+<td>Export the net to a file in the original SNNS file format</td></tr>
+<tr><td width="25%"><a href="extractNetInfo.html">extractNetInfo</a></td>
+<td>Extract information from a network</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-extractNetInfo.html">extractNetInfo-method</a></td>
+<td>Get characteristics of the network.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-extractPatterns.html">extractPatterns-method</a></td>
+<td>Extract the current pattern set to a matrix</td></tr>
+</table>
+
+<h2><a name="G">-- G --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="SnnsRObject-genericPredictCurrPatSet.html">genericPredictCurrPatSet-method</a></td>
+<td>Predict values with a trained net</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getAllHiddenUnits.html">getAllHiddenUnits-method</a></td>
+<td>Get all hidden units of the net</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getAllInputUnits.html">getAllInputUnits-method</a></td>
+<td>Get all input units of the net</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getAllOutputUnits.html">getAllOutputUnits-method</a></td>
+<td>Get all output units of the net.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getAllUnits.html">getAllUnits-method</a></td>
+<td>Get all units present in the net.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getAllUnitsTType.html">getAllUnitsTType-method</a></td>
+<td>Get all units in the net of a certain 'ttype'.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getCompleteWeightMatrix.html">getCompleteWeightMatrix-method</a></td>
+<td>Get the complete weight matrix.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getInfoHeader.html">getInfoHeader-method</a></td>
+<td>Get an info header of the network.</td></tr>
+<tr><td width="25%"><a href="getNormParameters.html">getNormParameters</a></td>
+<td>Get normalization parameters of the input data</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getSiteDefinitions.html">getSiteDefinitions-method</a></td>
+<td>Get the sites definitions of the network.</td></tr>
+<tr><td width="25%"><a href="getSnnsRDefine.html">getSnnsRDefine</a></td>
+<td>Get a define of the SNNS kernel</td></tr>
+<tr><td width="25%"><a href="getSnnsRFunctionTable.html">getSnnsRFunctionTable</a></td>
+<td>Get SnnsR function table</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getTypeDefinitions.html">getTypeDefinitions-method</a></td>
+<td>Get the FType definitions of the network.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getUnitDefinitions.html">getUnitDefinitions-method</a></td>
+<td>Get the unit definitions of the network.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getUnitsByName.html">getUnitsByName-method</a></td>
+<td>Find all units whose name begins with a given prefix.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getWeightMatrix.html">getWeightMatrix-method</a></td>
+<td>Get the weight matrix between two sets of units</td></tr>
+</table>
+
+<h2><a name="I">-- I --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="SnnsRObject-initializeNet.html">initializeNet-method</a></td>
+<td>Initialize the network</td></tr>
+<tr><td width="25%"><a href="inputColumns.html">inputColumns</a></td>
+<td>Get the columns that are inputs</td></tr>
+</table>
+
+<h2><a name="J">-- J --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="jordan.html">jordan</a></td>
+<td>Create and train a Jordan network</td></tr>
+<tr><td width="25%"><a href="jordan.html">jordan.default</a></td>
+<td>Create and train a Jordan network</td></tr>
+</table>
+
+<h2><a name="M">-- M --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="matrixToActMapList.html">matrixToActMapList</a></td>
+<td>Convert matrix of activations to activation map list</td></tr>
+<tr><td width="25%"><a href="mlp.html">mlp</a></td>
+<td>Create and train a multi-layer perceptron (MLP)</td></tr>
+<tr><td width="25%"><a href="mlp.html">mlp.default</a></td>
+<td>Create and train a multi-layer perceptron (MLP)</td></tr>
+</table>
+
+<h2><a name="N">-- N --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="normalizeData.html">normalizeData</a></td>
+<td>Data normalization</td></tr>
+<tr><td width="25%"><a href="normTrainingAndTestSet.html">normTrainingAndTestSet</a></td>
+<td>Function to normalize training and test set</td></tr>
+</table>
+
+<h2><a name="O">-- O --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="outputColumns.html">outputColumns</a></td>
+<td>Get the columns that are targets</td></tr>
+</table>
+
+<h2><a name="P">-- P --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="plotActMap.html">plotActMap</a></td>
+<td>Plot activation map</td></tr>
+<tr><td width="25%"><a href="plotIterativeError.html">plotIterativeError</a></td>
+<td>Plot iterative errors of an rsnns object</td></tr>
+<tr><td width="25%"><a href="plotIterativeError.html">plotIterativeError.rsnns</a></td>
+<td>Plot iterative errors of an rsnns object</td></tr>
+<tr><td width="25%"><a href="plotRegressionError.html">plotRegressionError</a></td>
+<td>Plot a regression error plot</td></tr>
+<tr><td width="25%"><a href="plotROC.html">plotROC</a></td>
+<td>Plot a ROC curve</td></tr>
+<tr><td width="25%"><a href="predict.rsnns.html">predict.rsnns</a></td>
+<td>Generic predict function for rsnns object</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-predictCurrPatSet.html">predictCurrPatSet-method</a></td>
+<td>Predict values with a trained net</td></tr>
+<tr><td width="25%"><a href="print.rsnns.html">print.rsnns</a></td>
+<td>Generic print function for rsnns objects</td></tr>
+</table>
+
+<h2><a name="R">-- R --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="rbf.html">rbf</a></td>
+<td>Create and train a radial basis function (RBF) network</td></tr>
+<tr><td width="25%"><a href="rbf.html">rbf.default</a></td>
+<td>Create and train a radial basis function (RBF) network</td></tr>
+<tr><td width="25%"><a href="rbfDDA.html">rbfDDA</a></td>
+<td>Create and train an RBF network with the DDA algorithm</td></tr>
+<tr><td width="25%"><a href="rbfDDA.html">rbfDDA.default</a></td>
+<td>Create and train an RBF network with the DDA algorithm</td></tr>
+<tr><td width="25%"><a href="readPatFile.html">readPatFile</a></td>
+<td>Load data from a pat file</td></tr>
+<tr><td width="25%"><a href="readResFile.html">readResFile</a></td>
+<td>Rudimentary parser for res files.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-resetRSNNS.html">resetRSNNS-method</a></td>
+<td>Reset the SnnsR object.</td></tr>
+<tr><td width="25%"><a href="resolveSnnsRDefine.html">resolveSnnsRDefine</a></td>
+<td>Resolve a define of the SNNS kernel</td></tr>
+<tr><td width="25%"><a href="RSNNS-package.html">RSNNS</a></td>
+<td>Getting started with the RSNNS package</td></tr>
+<tr><td width="25%"><a href="rsnnsObjectFactory.html">rsnns</a></td>
+<td>Object factory for generating rsnns objects</td></tr>
+<tr><td width="25%"><a href="rsnnsObjectFactory.html">rsnnsObjectFactory</a></td>
+<td>Object factory for generating rsnns objects</td></tr>
+</table>
+
+<h2><a name="S">-- S --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="savePatFile.html">savePatFile</a></td>
+<td>Save data to a pat file</td></tr>
+<tr><td width="25%"><a href="setSnnsRSeedValue.html">setSnnsRSeedValue</a></td>
+<td>DEPRECATED, Set the SnnsR seed value</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-setTTypeUnitsActFunc.html">setTTypeUnitsActFunc-method</a></td>
+<td>Set the activation function for all units of a certain ttype.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-setUnitDefaults.html">setUnitDefaults-method</a></td>
+<td>Set the unit defaults</td></tr>
+<tr><td width="25%"><a href="snnsData.html">snnsData</a></td>
+<td>Example data of the package</td></tr>
+<tr><td width="25%"><a href="SnnsR-class.html">SnnsR-class</a></td>
+<td>The main class of the package</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-createNet.html">SnnsRObject$createNet</a></td>
+<td>Create a layered network</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-createPatSet.html">SnnsRObject$createPatSet</a></td>
+<td>Create a pattern set</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-extractNetInfo.html">SnnsRObject$extractNetInfo</a></td>
+<td>Get characteristics of the network.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-extractPatterns.html">SnnsRObject$extractPatterns</a></td>
+<td>Extract the current pattern set to a matrix</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-genericPredictCurrPatSet.html">SnnsRObject$genericPredictCurrPatSet</a></td>
+<td>Predict values with a trained net</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getAllHiddenUnits.html">SnnsRObject$getAllHiddenUnits</a></td>
+<td>Get all hidden units of the net</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getAllInputUnits.html">SnnsRObject$getAllInputUnits</a></td>
+<td>Get all input units of the net</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getAllOutputUnits.html">SnnsRObject$getAllOutputUnits</a></td>
+<td>Get all output units of the net.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getAllUnits.html">SnnsRObject$getAllUnits</a></td>
+<td>Get all units present in the net.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getAllUnitsTType.html">SnnsRObject$getAllUnitsTType</a></td>
+<td>Get all units in the net of a certain 'ttype'.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getCompleteWeightMatrix.html">SnnsRObject$getCompleteWeightMatrix</a></td>
+<td>Get the complete weight matrix.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getInfoHeader.html">SnnsRObject$getInfoHeader</a></td>
+<td>Get an info header of the network.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getSiteDefinitions.html">SnnsRObject$getSiteDefinitions</a></td>
+<td>Get the sites definitions of the network.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getTypeDefinitions.html">SnnsRObject$getTypeDefinitions</a></td>
+<td>Get the FType definitions of the network.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getUnitDefinitions.html">SnnsRObject$getUnitDefinitions</a></td>
+<td>Get the unit definitions of the network.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getUnitsByName.html">SnnsRObject$getUnitsByName</a></td>
+<td>Find all units whose name begins with a given prefix.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getWeightMatrix.html">SnnsRObject$getWeightMatrix</a></td>
+<td>Get the weight matrix between two sets of units</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-initializeNet.html">SnnsRObject$initializeNet</a></td>
+<td>Initialize the network</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-predictCurrPatSet.html">SnnsRObject$predictCurrPatSet</a></td>
+<td>Predict values with a trained net</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-resetRSNNS.html">SnnsRObject$resetRSNNS</a></td>
+<td>Reset the SnnsR object.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-setTTypeUnitsActFunc.html">SnnsRObject$setTTypeUnitsActFunc</a></td>
+<td>Set the activation function for all units of a certain ttype.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-setUnitDefaults.html">SnnsRObject$setUnitDefaults</a></td>
+<td>Set the unit defaults</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-somPredictComponentMaps.html">SnnsRObject$somPredictComponentMaps</a></td>
+<td>Calculate the som component maps</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-somPredictCurrPatSetWinners.html">SnnsRObject$somPredictCurrPatSetWinners</a></td>
+<td>Get most of the relevant results from a som</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-somPredictCurrPatSetWinnersSpanTree.html">SnnsRObject$somPredictCurrPatSetWinnersSpanTree</a></td>
+<td>Get the spanning tree of the SOM</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-train.html">SnnsRObject$train</a></td>
+<td>Train a network and test it in every training iteration</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-whereAreResults.html">SnnsRObject$whereAreResults</a></td>
+<td>Get a list of output units of a net</td></tr>
+<tr><td width="25%"><a href="SnnsRObjectFactory.html">SnnsRObjectFactory</a></td>
+<td>SnnsR object factory</td></tr>
+<tr><td width="25%"><a href="SnnsRObjectMethodCaller.html">SnnsRObjectMethodCaller</a></td>
+<td>Method caller for SnnsR objects</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-createNet.html">SnnsR__createNet</a></td>
+<td>Create a layered network</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-createPatSet.html">SnnsR__createPatSet</a></td>
+<td>Create a pattern set</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-extractNetInfo.html">SnnsR__extractNetInfo</a></td>
+<td>Get characteristics of the network.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-extractPatterns.html">SnnsR__extractPatterns</a></td>
+<td>Extract the current pattern set to a matrix</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-genericPredictCurrPatSet.html">SnnsR__genericPredictCurrPatSet</a></td>
+<td>Predict values with a trained net</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getAllHiddenUnits.html">SnnsR__getAllHiddenUnits</a></td>
+<td>Get all hidden units of the net</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getAllInputUnits.html">SnnsR__getAllInputUnits</a></td>
+<td>Get all input units of the net</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getAllOutputUnits.html">SnnsR__getAllOutputUnits</a></td>
+<td>Get all output units of the net.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getAllUnits.html">SnnsR__getAllUnits</a></td>
+<td>Get all units present in the net.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getAllUnitsTType.html">SnnsR__getAllUnitsTType</a></td>
+<td>Get all units in the net of a certain 'ttype'.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getCompleteWeightMatrix.html">SnnsR__getCompleteWeightMatrix</a></td>
+<td>Get the complete weight matrix.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getInfoHeader.html">SnnsR__getInfoHeader</a></td>
+<td>Get an info header of the network.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getSiteDefinitions.html">SnnsR__getSiteDefinitions</a></td>
+<td>Get the sites definitions of the network.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getTypeDefinitions.html">SnnsR__getTypeDefinitions</a></td>
+<td>Get the FType definitions of the network.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getUnitDefinitions.html">SnnsR__getUnitDefinitions</a></td>
+<td>Get the unit definitions of the network.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getUnitsByName.html">SnnsR__getUnitsByName</a></td>
+<td>Find all units whose name begins with a given prefix.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-getWeightMatrix.html">SnnsR__getWeightMatrix</a></td>
+<td>Get the weight matrix between two sets of units</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-initializeNet.html">SnnsR__initializeNet</a></td>
+<td>Initialize the network</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-predictCurrPatSet.html">SnnsR__predictCurrPatSet</a></td>
+<td>Predict values with a trained net</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-resetRSNNS.html">SnnsR__resetRSNNS</a></td>
+<td>Reset the SnnsR object.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-setTTypeUnitsActFunc.html">SnnsR__setTTypeUnitsActFunc</a></td>
+<td>Set the activation function for all units of a certain ttype.</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-setUnitDefaults.html">SnnsR__setUnitDefaults</a></td>
+<td>Set the unit defaults</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-somPredictComponentMaps.html">SnnsR__somPredictComponentMaps</a></td>
+<td>Calculate the som component maps</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-somPredictCurrPatSetWinners.html">SnnsR__somPredictCurrPatSetWinners</a></td>
+<td>Get most of the relevant results from a som</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-somPredictCurrPatSetWinnersSpanTree.html">SnnsR__somPredictCurrPatSetWinnersSpanTree</a></td>
+<td>Get the spanning tree of the SOM</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-train.html">SnnsR__train</a></td>
+<td>Train a network and test it in every training iteration</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-whereAreResults.html">SnnsR__whereAreResults</a></td>
+<td>Get a list of output units of a net</td></tr>
+<tr><td width="25%"><a href="som.html">som</a></td>
+<td>Create and train a self-organizing map (SOM)</td></tr>
+<tr><td width="25%"><a href="som.html">som.default</a></td>
+<td>Create and train a self-organizing map (SOM)</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-somPredictComponentMaps.html">somPredictComponentMaps-method</a></td>
+<td>Calculate the som component maps</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-somPredictCurrPatSetWinners.html">somPredictCurrPatSetWinners-method</a></td>
+<td>Get most of the relevant results from a som</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-somPredictCurrPatSetWinnersSpanTree.html">somPredictCurrPatSetWinnersSpanTree-method</a></td>
+<td>Get the spanning tree of the SOM</td></tr>
+<tr><td width="25%"><a href="splitForTrainingAndTest.html">splitForTrainingAndTest</a></td>
+<td>Function to split data into training and test set</td></tr>
+<tr><td width="25%"><a href="summary.rsnns.html">summary.rsnns</a></td>
+<td>Generic summary function for rsnns objects</td></tr>
+</table>
+
+<h2><a name="T">-- T --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="toNumericClassLabels.html">toNumericClassLabels</a></td>
+<td>Convert a vector (of class labels) to a numeric vector</td></tr>
+<tr><td width="25%"><a href="train.html">train</a></td>
+<td>Internal generic train function for rsnns objects</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-train.html">train-method</a></td>
+<td>Train a network and test it in every training iteration</td></tr>
+<tr><td width="25%"><a href="train.html">train.rsnns</a></td>
+<td>Internal generic train function for rsnns objects</td></tr>
+</table>
+
+<h2><a name="V">-- V --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="vectorToActMap.html">vectorToActMap</a></td>
+<td>Convert a vector to an activation map</td></tr>
+</table>
+
+<h2><a name="W">-- W --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="weightMatrix.html">weightMatrix</a></td>
+<td>Function to extract the weight matrix of an rsnns object</td></tr>
+<tr><td width="25%"><a href="weightMatrix.html">weightMatrix.rsnns</a></td>
+<td>Function to extract the weight matrix of an rsnns object</td></tr>
+<tr><td width="25%"><a href="SnnsRObject-whereAreResults.html">whereAreResults-method</a></td>
+<td>Get a list of output units of a net</td></tr>
+</table>
+
+<h2><a name="misc">-- misc --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="SnnsRObjectMethodCaller.html">$</a></td>
+<td>Method caller for SnnsR objects</td></tr>
+<tr><td width="25%"><a href="SnnsRObjectMethodCaller.html">$-method</a></td>
+<td>Method caller for SnnsR objects</td></tr>
+</table>
+</body></html>

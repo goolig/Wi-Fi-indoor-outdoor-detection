@@ -1,0 +1,175 @@
+%
+% NOTE -- ONLY EDIT THE .Rnw FILE!!!  The .tex file is
+% likely to be overwritten.
+%
+% \VignetteIndexEntry{gpls Tutorial}
+% \VignetteDepends{}
+% \VignetteKeywords{}
+% \VignettePackage{gpls}
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,epsfig,fullpage}
+\usepackage{graphicx}
+\usepackage[authoryear,round]{natbib}
+\usepackage{hyperref}
+
+\newcommand{\Rfunction}[1]{{\texttt{#1}}}
+\newcommand{\Robject}[1]{{\texttt{#1}}}
+\newcommand{\Rpackage}[1]{{\textit{#1}}}
+\newcommand{\Rmethod}[1]{{\texttt{#1}}}
+\newcommand{\Rfunarg}[1]{{\texttt{#1}}}
+\newcommand{\Rclass}[1]{{\textit{#1}}}
+
+%\parindent 0in
+
+\bibliographystyle{plainnat}
+
+\begin{document}
+\title{Classification using Generalized Partial Least Squares}
+\author{Beiying Ding\\ Robert Gentleman}
+\maketitle
+
+\section*{Introduction}
+The \Rpackage{gpls} package includes functions for classification using
+generalized partial least squares approaches. Both two-group and
+multi-group (more than 2 groups) classifications can be done. The
+basic functionalities are based on and extended from the Iteratively
+ReWeighted Least Squares (IRWPLS) by \citet{marx:1996}. Additionally,
+Firth's bias reduction procedure \citep{firth:1992:a, firth:1992:b,
+  firth:1993} is incorporated to remedy the nonconvergence problem
+frequently encountered in logistic regression. For more detailed
+description of classification using generalized partial least squares,
+refer to \citet{ding:2003:c}.\\
+
+\section*{The \Rfunction{glpls1a} function}
+The \Rfunction{glpls1a} function carries out two-group classification via
+IRWPLS(F). Whether or not to use Firth's bias reduction is an option
+({\tt br=T}). The X matrix shouldn't include an intercept term.\\
+
+<<>>=
+library(gpls)
+
+set.seed(123)
+
+x <- matrix(rnorm(20),ncol=2)
+y <- sample(0:1,10,TRUE)
+
+## no bias reduction
+glpls1a(x,y,br=FALSE)
+
+## no bias reduction and 1 PLS component
+glpls1a(x,y,K.prov=1,br=FALSE)
+
+## bias reduction
+glpls1a(x,y,br=TRUE)
+
+@
+{\tt K.prov} specifies the number PLS components to use. Note that
+when {\tt K.prov} is no specified, the number of PLS components are
+set to be the smaller of the row and column rank of the design
+matrix.\\
+
+\section*{The \Rfunction{glpls1a.cv.error} and
+          \Rfunction{glpls1a.train.test.error} functions}
+The \Rfunction{glpls1a.cv.error} calculates leave-one-out classification
+error rate for two-group classification and
+\texttt{glpls1a.train.test.error}
+calculates test set error where the model is fit using the training
+set.\\
+
+<<>>=
+## training set
+x <- matrix(rnorm(20),ncol=2)
+y <- sample(0:1,10,TRUE)
+
+## test set
+x1 <- matrix(rnorm(10),ncol=2)
+y1 <- sample(0:1,5,TRUE)
+
+## no bias reduction
+glpls1a.cv.error(x,y,br=FALSE)
+glpls1a.train.test.error(x,y,x1,y1,br=FALSE)
+
+## bias reduction and 1 PLS component
+glpls1a.cv.error(x,y,K.prov=1,br=TRUE)
+glpls1a.train.test.error(x,y,x1,y1,K.prov=1,br=TRUE)
+
+@
+\section*{The \texttt{glpls1a.mlogit} and \texttt{glpls1a.logit.all} functions}
+The \Rfunction{glpls1a.mlogit} carries out multi-group classification using
+MIRWPLS(F) where the baseline logit model is used as counterpart to
+\Rfunction{glpls1a} for two group case. \Rfunction{glpls1a.logit.all}
+carries out
+multi-group classification by separately fitting $C$ two-group
+classification using \Rfunction{glpls1a} separately for $C$ group vs the
+same baseline class (i.e. altogether $C+1$ classes). This separate
+fitting of logit is known to be less efficient but has been used in
+practice due to its more straightforward implementation.\\
+
+Note that when using \Rfunction{glpls1a.mlogit}, the X matrix needs to have
+a column of one, i.e. intercept term.
+
+<<>>=
+x <- matrix(rnorm(20),ncol=2)
+y <- sample(1:3,10,TRUE)
+
+## no bias reduction and 1 PLS component
+glpls1a.mlogit(cbind(rep(1,10),x),y,K.prov=1,br=FALSE)
+glpls1a.logit.all(x,y,K.prov=1,br=FALSE)
+
+## bias reduction
+glpls1a.mlogit(cbind(rep(1,10),x),y,br=TRUE)
+glpls1a.logit.all(x,y,br=TRUE)
+
+@
+\section*{The \Rfunction{glpls1a.mlogit.cv.error} function}
+The \Rfunction{glpls1a.mlogit.cv.error} calculates leave-one-out error for
+multi-group classification using (M)IRWPLS(F). When the \Robject{mlogit}
+option is set to be true, then \Rfunction{glpls1a.mlogit} is used, else
+\Rfunction{glpls1a.logit.all} is used for fitting.\\
+
+<<>>=
+x <- matrix(rnorm(20),ncol=2)
+y <- sample(1:3,10,TRUE)
+
+## no bias reduction
+glpls1a.mlogit.cv.error(x,y,br=FALSE)
+glpls1a.mlogit.cv.error(x,y,mlogit=FALSE,br=FALSE)
+
+## bias reduction
+glpls1a.mlogit.cv.error(x,y,br=TRUE)
+glpls1a.mlogit.cv.error(x,y,mlogit=FALSE,br=TRUE)
+
+@
+
+
+\subsection{Fitting Models to data}
+
+Here we demonstrate the use of \Rfunction{gpls} on some standard
+machine learning examples. We first make use of the Pima Indian data
+from the MASS package.
+
+<<pimaEx>>=
+library(MASS)
+
+ m1 = gpls(type~., Pima.tr)
+
+
+ p1 = predict(m1, Pima.te[,-8])
+
+
+##when we get to the multi-response problems
+     data(iris3)
+     Iris <- data.frame(rbind(iris3[,,1], iris3[,,2], iris3[,,3]),
+                        Sp = rep(c("s","c","v"), rep(50,3)))
+     train <- sample(1:150, 75)
+     table(Iris$Sp[train])
+     ## your answer may differ
+     ##  c  s  v
+     ## 22 23 30
+     z <- lda(Sp ~ ., Iris, prior = c(1,1,1)/3, subset = train)
+     predict(z, Iris[-train, ])$class
+
+@
+\bibliography{gpls}
+\end{document}

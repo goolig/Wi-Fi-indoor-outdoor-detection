@@ -1,0 +1,12 @@
+fdskrls                 Compute first differences with KRLS
+gausskernel             Gaussian Kernel Distance Computation
+krls                    Kernel-based Regularized Least Squares (KRLS)
+lambdasearch            Leave-one-out optimization to find lambda
+looloss                 Loss Function for Leave One Out Error
+plot.krls               Plot method for Kernel-based Regularized Least
+                        Squares (KRLS) Model Fits
+predict.krls            Predict method for Kernel-based Regularized
+                        Least Squares (KRLS) Model Fits
+solveforc               Solve for Choice Coefficients in KRLS
+summary.krls            Summary method for Kernel-based Regularized
+                        Least Squares (KRLS) Model Fits

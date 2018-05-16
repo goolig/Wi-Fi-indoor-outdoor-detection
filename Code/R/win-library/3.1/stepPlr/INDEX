@@ -1,0 +1,8 @@
+cv.step.plr             Computes cross-validated deviance or prediction
+                        errors for step.plr
+plr                     Logistic regression with a quadratic
+                        penalization on the coefficients
+predict.plr             prediction function for plr
+predict.stepplr         prediction function for step.plr
+step.plr                Forward stepwise selection procedure for
+                        penalized logistic regression

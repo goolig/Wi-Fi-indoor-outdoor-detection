@@ -1,0 +1,1 @@
+export(PenalizedLDA,PenalizedLDA.cv,plot.penlda,print.penlda,print.penldacv,plot.penldacv,predict.penlda)

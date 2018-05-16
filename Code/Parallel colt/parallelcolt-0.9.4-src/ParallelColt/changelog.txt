@@ -1,0 +1,147 @@
+Parallel Colt changelog
+
+0.9.4:	March 21, 2010
+	- JPlasma updated to version 1.2.
+	- Removed DenseDoubleSingularValueDecomposition and DenseFloatSingularValueDecomposition.
+	- Renamed DenseDoubleSingularValueDecompositionDC and DenseFloatSingularValueDecompositionDC.	 
+
+0.9.3:	February 28, 2010
+	- JPlasma updated to version 1.1.
+
+0.9.2:	January 24, 2010
+	- Fixed bug in DenseDoubleAlgebra.solve() and DenseFloatAlgebra.solve() causing IndexOutOfBoundsException.
+	 
+0.9.1:	September 19, 2009
+	- Removed source code of CSparseJ, JTransforms, JPlasma and Optimization.
+	- Added jar files of CSparseJ, JTransforms, JPlasma and Optimization.
+	- Renamed jar files of JARPACK, JUnit and Netlib-Java.
+	- JUnit updated to version 4.7. 
+
+0.9:	August 27, 2009 
+	- Added new types of objects to cern.colt.buffer.
+	- Added OpenDoubleLongHashMap and OpenFloatLongHashMap.
+	- Added OpenLongIntHashMap and OpenIntLongHashMap.
+	- Added new types of matrices holding complex elements.
+	- Added new types of matrices holding int elements.
+	- Added new types of matrices holding long elements.
+	- Added new types of matrices holding Object elements.
+	- Removed tridiagonal matrices.	
+	- Removed "@override" to allow compilation with Java 5.
+	- Some improvements in ConcurrencyUtils.
+	- Some refactoring and cosmetic changes. 
+		
+0.8.2: July 29, 2009
+	- Fixed bug in solve() methods in linear algebra causing to return incorrect results for rectangular matrices.
+	- Fixed bug in HyBR causing incorrect results when a preconditioner was used.
+
+0.8.1:	July 28, 2009
+	- Added cern.colt.map.tlong (hashmaps holding (long -> long)).
+	- Added cern.colt.matrix.tlong (matrices holding long elements).
+	- Performance improvements in sparse matrix-vector product (column-compressed and row-compressed matrices).
+	- Some refactoring and cosmetic changes. 
+
+0.8:	June 19, 2009
+	- Added JPlasma 1.0. 
+	- New, multithreaded versions of dense Cholesky and QR decompositions (JPlasma is used).
+	- Added CSparseJ 1.0.
+	- Added sparse Cholesky, LU and QR decompositions (CSparseJ is used).
+	- Added SparseDoubleAlgebra and SparseFloatAlgebra.
+	- Added 2D and 3D dense floating point matrices with elements stored in multidimensional arrays (to avoid 2^31 size limitation). 
+	- Removed JCublas.
+	- Removed corejava (replaced by String.format()).
+	- Fixed few bugs in MRNSD and CGLS. 
+	- Some refactoring and many cosmetic changes.
+
+0.7.2:	March 25, 2009
+	- Added new aggregate() method in 1D dense matrices.
+	- Added Modified Residual Norm Steepest Descent (MRNSD) solver.
+	- Added Conjugate Gradient for Least Squares (CGLS) solver.
+	- Added new solve() method in DoubleQRDecomposition and FloatQRDecomposition.
+	- Fixed few bugs in HyBR.
+	- Performance improvements in row-compressed sparse matrices.
+
+0.7.1:	February 27, 2009
+	- Fixed bug in build.xml causing generation of incomplete source code distribution.
+	- Fixed bug in DelegateDoubleMatrix1D and DelagateFloatMatrix1D causing NullPointerException 
+	  when toString() method was called.
+	- Fixed bug in JCublas.cublasInit() causing NullPointerException in some cases. 
+	- Added DiagonalDoubleMatrix2D and DiagonalFloatMatrix2D.  
+	- Some optimizations in complex matrices.
+	- JTransforms updated to version 2.3.
+	- Cosmetic changes.	
+
+0.7:	February 14, 2009
+	- Added iterative solvers and preconditioners (adapted from Matrix Toolkits for Java).
+	- Added HyBR solver - a Hybrid Bidiagonalization Regularization.
+	- Added nonlinear optimization package.  
+	- Added JCublas (currently used only for matrix-matrix multiplication). 		
+	- Added CCDoubleMatrix2D and CCFloatMatrix2D.
+	- Added CCMDoubleMatrix2D and CCMFloatMatrix2D.
+	- Added DenseColDoubleMatrix2D and DenseColFloatMatrix2D.
+	- Added OpenLongDoubleHashMap and OpenLongFloatHashMap.
+	- Added cern.colt.matrix.io (matrix reader/writer, adapted from Matrix Toolkits for Java).
+	- Added cern.colt.matrix.tint (matrices holding int elements).
+	- Added conversion methods in SparseDoubleMatrix2D and SparseFloatMatrix2D.
+	- Added unit tests for iterative solvers.
+	- Rewritten unit tests for matrices.		    	
+	- JLAPACK replaced by netlib-java.		
+	- Internal storage changed in SparseDoubleMatrix1D, SparseDoubleMatrix2D, SparseDoubleMatrix3D,
+	  RCMDoubleMatrix2D and their single precision equivalents.
+    - From now on, the trigonometric transforms are only supported by
+	  DenseDoubleMatrix1D, DenseDoubleMatri2D, DenseDoubleMatrix3D, DenseColDoubleMatrix1D, 
+	  DenseColDoubleMatri2D, DenseColDoubleMatrix3D and their single precision equivalents.   
+	- JTransforms updated to version 2.2. 
+	- Some refactoring and many cosmetic changes.
+		
+0.6.1:	December 12, 2008
+	- JTransforms updated to version 2.1 
+
+0.6:	November 21, 2008
+	- A lot of refactoring (now each object of a given type has its own package).
+	- JTransforms updated to version 2.0 (no more power-of-two size limitation).
+	- Multithreaded implementation of Object matrices.
+	- Fixed bug in DComplex.inv() and FComplex.inv().
+
+0.5:	August 24, 2008	
+	- Added multithreaded quicksorts for many data types.
+	- Added parallel 1D histograms for 2D matrices.
+	- Added benchmarks for dense matrices.
+	- Added real FFTs and DHTs.
+	- Added javadoc distribution.
+	- Bzip2 is used to compress tar archives.
+	- Fixed bugs causing incorrect computations of the transforms for views.
+	- Fixed bug in normalize() causing incorrect results in some specific cases.
+	- Refactoring in edu.emory.mathcs.utils cern.colt.matrix.doublealgo, cern.colt.matrix.floatalgo and cern.colt.matrix.objectalgo.
+	- Unit tests and benchmarks are in separate directories now.
+	- Removed cern.colt.matrix.doublealgo.Transform and cern.colt.matrix.floatalgo.Transform.
+
+0.4:	April 17, 2008
+	- More efficient implementation of all operations on "views".
+	- More efficient matrix-matrix multiplication algorithms.
+	- Fixed several bugs in dense matrices.
+
+0.3:	February 15, 2008
+	- Added single precision.
+
+0.2.1:	January 30, 2008
+	- Added JLAPACK 0.8.
+	- Added SingularValueDecompositionDC.
+	
+0.2:	January 5, 2008
+	- Added JTransforms.
+	- Added complex matrices, factories and functions.
+	- Added new methods in dense double matrices.
+	- Added JUnit tests for dense complex and double matrices.
+	- Removed SeqBlas.
+	- Fixed bug in aggregate methods.
+	- Added multithreaded versions of many methods in dense complex and double matrices.
+
+0.1:	September 5, 2007
+	- Initial release.
+	- Changes in Colt 1.2:
+		- EDU.oswego.cs.dl.util.concurrent replaced by java.util.concurrent.
+		- Added multithreaded implementation of quicksort.
+		- Added sortIndex() methods.
+		- Added multithreaded varsions of all assign() and aggregate() methods for dense matrices.
+		- Automatic multithreading - no need to initialize threads in SmpBlas or any other class.
+

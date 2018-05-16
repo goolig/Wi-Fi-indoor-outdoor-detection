@@ -1,0 +1,27 @@
+superpc.cv              Cross-validation for supervised principal
+                        components
+superpc.decorrelate     Decorrelate features with respect to competing
+                        predictors
+superpc.fit.to.outcome
+                        Fit predictive model using outcome of
+                        supervised principal components
+superpc.listfeatures    Return a list of the important predictors
+superpc.lrtest.curv     Compute values of likelihood ratio test from
+                        supervised principal components fit
+superpc.plot.lrtest     Plot likelhiood ratio test statistics
+superpc.plotcv          Plot output from superpc.cv
+superpc.plotred.lrtest
+                        Plot likelihood ratio test statistics from
+                        supervised principal components predictor
+superpc.predict         Form principal components predictor from a
+                        trained superpc object
+superpc.predict.red     Feature selection for supervised principal
+                        components
+superpc.predict.red.cv
+                        Cross-validation of feature selection for
+                        supervised principal components
+superpc.predictionplot
+                        Plot outcome predictions from superpc
+superpc.rainbowplot     Make rainbow plot of superpc and compeiting
+                        predictors
+superpc.train           Prediction by supervised principal components

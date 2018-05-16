@@ -1,0 +1,17 @@
+Package: superpc
+Title: Supervised principal components
+Version: 1.09
+Author: Eric Bair, R. Tibshirani
+Description: Supervised principal components for regression and
+        survival analsysis. Especially useful for high-dimnesional
+        data, including microarray data.
+Maintainer: Rob Tibshirani <tibs@stanford.edu>
+Depends: survival
+LazyLoad: false
+LazyData: false
+License: GPL-2
+URL: http://www-stat.stanford.edu/~tibs/superpc
+Packaged: 2012-02-26 20:06:30 UTC; tibs
+Repository: CRAN
+Date/Publication: 2012-02-27 07:36:05
+Built: R 3.1.3; ; 2015-03-10 11:59:40 UTC; windows

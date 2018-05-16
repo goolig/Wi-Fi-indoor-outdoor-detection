@@ -1,0 +1,27 @@
+AlphabeticTokenizer     R/Weka Tokenizers
+Apriori                 R/Weka Associators
+C45Loader               R/Weka File Loaders and Savers
+Cobweb                  R/Weka Clusterers
+InfoGainAttributeEval   R/Weka Attribute Evaluators
+IteratedLovinsStemmer   R/Weka Stemmers
+Normalize               R/Weka Filters
+WOW                     Weka Option Wizard
+WPM                     Weka Package Manager
+Weka_classifier_functions
+                        R/Weka Classifier Functions
+Weka_classifier_lazy    R/Weka Lazy Learners
+Weka_classifier_meta    R/Weka Meta Learners
+Weka_classifier_rules   R/Weka Rule Learners
+Weka_classifier_trees   R/Weka Classifier Trees
+Weka_classifiers        R/Weka Classifiers
+Weka_control            Control Weka Options
+evaluate_Weka_classifier
+                        Model Statistics for R/Weka Classifiers
+make_Weka_associator    R/Weka interfaces
+predict.Weka_classifier
+                        Model Predictions for R/Weka Classifiers
+predict.Weka_clusterer
+                        Class Predictions for R/Weka Clusterers
+read.arff               Read Data from ARFF Files
+write.arff              Write Data into ARFF Files
+write_to_dot            Create DOT Representations

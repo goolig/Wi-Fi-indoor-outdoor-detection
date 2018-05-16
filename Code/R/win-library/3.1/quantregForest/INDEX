@@ -1,0 +1,3 @@
+predict.quantregForest
+                        predict method for class quantregForest
+quantregForest          Quantile Regression Forests

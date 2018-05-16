@@ -1,0 +1,19 @@
+Package: RWekajars
+Version: 3.7.12-1
+Title: R/Weka interface jars
+Authors@R: c(person("Kurt", "Hornik", role = c("aut", "cre"),
+                    email = "Kurt.Hornik@R-project.org"),
+             person("University of Waikato", role = c("ctb", "cph"),
+                    comment = "Weka Java library"))
+Description: External jars required for package RWeka.
+Imports: rJava (>= 0.6-3)
+SystemRequirements: Java (>= 6.0)
+License: GPL-2
+Packaged: 2015-01-28 13:36:34 UTC; hornik
+Author: Kurt Hornik [aut, cre],
+  University of Waikato [ctb, cph] (Weka Java library)
+Maintainer: Kurt Hornik <Kurt.Hornik@R-project.org>
+NeedsCompilation: no
+Repository: CRAN
+Date/Publication: 2015-01-28 14:40:41
+Built: R 3.1.2; ; 2015-01-28 23:20:38 UTC; windows

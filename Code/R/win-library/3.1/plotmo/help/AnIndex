@@ -1,0 +1,13 @@
+check.index	plotmo.methods
+get.and.check.subset	plotmo.methods
+get.plotmo.nresponse	plotmo.methods
+get.plotmo.pairs	plotmo.methods
+get.plotmo.singles	plotmo.methods
+get.plotmo.type	plotmo.methods
+get.plotmo.type.wrapper	plotmo.methods
+get.plotmo.x	plotmo.methods
+get.plotmo.x.wrapper	plotmo.methods
+get.plotmo.y	plotmo.methods
+get.plotmo.y.default	plotmo.methods
+get.plotmo.y.wrapper	plotmo.methods
+plotmo	plotmo

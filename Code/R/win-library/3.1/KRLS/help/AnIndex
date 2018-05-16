@@ -1,0 +1,9 @@
+fdskrls	fdskrls
+gausskernel	gausskernel
+krls	krls
+lambdasearch	lambdasearch
+looloss	looloss
+plot.krls	plot.krls
+predict.krls	predict.krls
+solveforc	solveforc
+summary.krls	summary.krls

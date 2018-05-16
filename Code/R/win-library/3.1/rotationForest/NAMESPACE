@@ -1,0 +1,6 @@
+import(rpart)
+
+export(rotationForest)
+S3method(predict, rotationForest)
+
+

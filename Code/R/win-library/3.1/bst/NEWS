@@ -1,0 +1,18 @@
+                CHANGES in `bst' VERSION 0.2 (02-12-2011)
+
+  o  multi-class HingeBoost via one-vs-all method
+
+                CHANGES in `bst' VERSION 0.3-1 (08-8-2011)
+  o  multi-class HingeBoost msvm
+  o  add misclassification error as a criteria in cv.msvm for multiclass problem
+                
+                CHANGES in `bst' VERSION 0.3-2 (01-17-2012)
+  o  added trees size selection in multi-class HingeBoost msvm
+                
+                CHANGES in `bst' VERSION 0.3-3 (09-12-2013)
+  o  function name mhinge was changed to mhingeova (multi-class hinge one-vs-all)
+  o  function name msvm was changed to mhingebst (multi-class hinge boosting)
+                
+                CHANGES in `bst' VERSION 0.3-4 (05-8-2014)
+  o  change output name fraction to mstop in cv.bst
+

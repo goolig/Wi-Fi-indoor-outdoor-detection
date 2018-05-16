@@ -1,0 +1,3 @@
+exportPattern("^[^\\.]")
+S3method (predict, rrlda)
+

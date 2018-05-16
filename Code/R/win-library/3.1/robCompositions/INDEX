@@ -1,0 +1,57 @@
+aDist                   Aitchison distance
+addLR                   Additive log-ratio transformation
+addLRinv                Additive logistic transformaton
+adjust                  Adjusting for original scale
+adtest                  Anderson-Darling Normality Tests
+adtestWrapper           Wrapper for Anderson-Darling tests
+arcticLake              Artic lake sediment data
+cenLR                   Centred log-ratio transformation
+cenLRinv                Inverse centred log-ratio transformation
+coffee                  Coffee data
+constSum                Constant sum
+daFisher                Discriminant analysis by Fisher Rule.
+expenditures            Household expenditures data
+expendituresEU          Mean consumption expenditures data.
+gm                      geometric mean
+haplogroups             Haplogroups data.
+impAll                  Replacement of rounded zeros and missing
+                        values.
+impCoda                 Imputation of missing values in compositional
+                        data
+impKNNa                 Imputation of missing values in compositional
+                        data using knn methods
+impRZalr                alr EM-based Imputation for Rounded Zeros
+impRZilr                EM-based replacement of rounded zeros in
+                        compositional data
+isomLR                  Isometric log-ratio transformation
+isomLRinv               Inverse isometric log-ratio transformation
+lmCoDaX                 Classical and robust regression of
+                        non-compositional response on compositional
+                        predictors
+machineOperators        Machine operators data set
+missPatterns            missing or zero pattern structure.
+orthbasis               Orthonormal basis
+outCoDa                 Outlier detection for compositional data
+pcaCoDa                 Robust principal component analysis for
+                        compositional data
+pfa                     Factor analysis for compositional data
+phd                     PhD Students in the EU
+plot.imp                Plot method for objects of class imp
+plot.outCoDa            plot method for outCoDa objects
+plot.pcaCoDa            Plot method
+print.adtestWrapper     print method for objects of class adtestWrapper
+print.daFisher          print method for objects of class daFisher
+print.imp               Print method for objects of class imp
+print.outCoDa           print method for outCoDa objects
+print.pcaCoDa           Print method for pcaCoDa objects
+robCompositions-package
+                        Robust Estimation for Compositional Data.
+robVariation            Robust variation matrix
+skyeLavas               Aphyric skye lavas data
+summary.adtestWrapper   summary method for objects of class
+                        adtestWrapper
+summary.imp             Summary method for objects of class imp
+ternaryDiag             Ternary diagram
+ternaryDiagAbline       Adds a line to a ternary diagram.
+ternaryDiagEllipse      Adds tolerance ellipses to a ternary diagram.
+ternaryDiagPoints       Add points or lines to a given ternary diagram.

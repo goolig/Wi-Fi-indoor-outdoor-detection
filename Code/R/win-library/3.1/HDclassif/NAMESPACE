@@ -1,0 +1,11 @@
+
+importFrom(stats,predict)
+importFrom(graphics,plot)
+importFrom(MASS,mvrnorm)
+
+export(hdda,hddc,simuldata,demo_hddc)
+
+S3method(predict,hdc)
+S3method(plot,hdc)
+S3method(print,hd)
+S3method(print,hdc)

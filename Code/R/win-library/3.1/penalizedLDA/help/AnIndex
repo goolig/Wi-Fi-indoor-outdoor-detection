@@ -1,0 +1,9 @@
+penalizedLDA-package	penalizedLDA-package
+PenalizedLDA	PenalizedLDA
+penalizedLDA	penalizedLDA-package
+PenalizedLDA.cv	PenalizedLDA.cv
+plot.penlda	penalizedLDA-internal
+plot.penldacv	penalizedLDA-internal
+predict.penlda	predict.penlda
+print.penlda	penalizedLDA-internal
+print.penldacv	penalizedLDA-internal

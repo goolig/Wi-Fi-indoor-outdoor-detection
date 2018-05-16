@@ -1,0 +1,4 @@
+useDynLib(stepPlr)
+
+export(anova.stepplr, cv.step.plr, plr, predict.plr, predict.stepplr, print.plr, print.stepplr, step.plr, summary.plr, summary.stepplr)
+

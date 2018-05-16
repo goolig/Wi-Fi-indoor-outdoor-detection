@@ -1,0 +1,35 @@
+This package is under GPL version 2 or newer.
+
+Maintainer:
+  Albrecht Gebhardt <albrecht.gebhardt@uni-klu.ac.at>
+
+Author:
+  James J. Majure <majure@iastate.edu> Iowa State University
+
+The Original was public available from 1995 to 2006 (according to the records at
+http://web.archive.org) at:
+
+    http://www.gis.iastate.edu/SGeoStat/homepage.html
+
+and seems to have vanished due to website restructuring.
+
+The subdirectory www-SGeoStat/ contains a mirror of that site, also available at
+http://web.archive.org/web/*/http://www.gis.iastate.edu/SGeoStat/homepage.html
+
+The original was written by S. Majure and intended for use wit S-Plus.
+
+The original version contains no Copyright statements and no details about
+redistributability, neither in the code nor on the web pages. Due to the fact
+of the (former) public availability, together with the obvious intention of the 
+original author that users should download and use this software (Downloading and 
+Installation instructions) it can be assumed that the code is under public
+domain and therefore can be relicensed under GPL.
+
+So starting with version 1.0-25 this package is under GPL version 2 or newer.
+
+Small parts have been added to the original code and are also licensed under 
+GPL version 2 or newer, for details see README file.
+
+
+
+  Albrecht Gebhardt <albrecht.gebhardt@uni-klu.ac.at>

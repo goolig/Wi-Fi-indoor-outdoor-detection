@@ -1,0 +1,16 @@
+Package: sparseLDA
+Version: 0.1-6
+Date: 2012-03-27
+Title: Sparse Discriminant Analysis
+Author: Line Clemmensen <lhc@imm.dtu.dk>, contributions by Max Kuhn
+Maintainer: Line Clemmensen <lhc@imm.dtu.dk>
+Depends: lars, elasticnet, MASS, mda, R (>= 2.10)
+Description: Performs sparse linear discriminant analysis for gaussians
+        and mixture of gaussians models.
+License: GPL (>= 2)
+URL: http://www.imm.dtu.dk/~lhc,
+        https://r-forge.r-project.org/projects/sparselda/
+Packaged: 2012-06-19 16:26:59 UTC; kuhna03
+Repository: CRAN
+Date/Publication: 2012-06-19 17:00:11
+Built: R 3.1.3; ; 2015-03-19 23:56:20 UTC; windows

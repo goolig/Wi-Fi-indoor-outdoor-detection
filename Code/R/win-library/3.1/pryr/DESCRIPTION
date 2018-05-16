@@ -1,0 +1,26 @@
+Type: Package
+Package: pryr
+Title: Tools for computing on the language
+Description: Useful tools to pry back the covers of R and understand the
+    language at a deeper level.
+Authors@R: c(
+    person("Hadley", "Wickham",
+    email = "h.wickham@gmail.com", role = c("aut", "cre")),
+    person("R Core team", role = "ctb",
+    comment = "Some code extracted from base R"))
+License: GPL-2
+URL: https://github.com/hadley/pryr
+BugReports: https://github.com/hadley/pryr/issues
+Version: 0.1
+LinkingTo: Rcpp
+Imports: stringr, codetools, methods, Rcpp (>= 0.11.0)
+Suggests: testthat (>= 0.8.0)
+Packaged: 2014-07-22 19:47:04 UTC; hadley
+Author: Hadley Wickham [aut, cre],
+  R Core team [ctb] (Some code extracted from base R)
+Maintainer: Hadley Wickham <h.wickham@gmail.com>
+NeedsCompilation: yes
+Repository: CRAN
+Date/Publication: 2014-07-25 20:28:24
+Built: R 3.1.3; x86_64-w64-mingw32; 2015-03-31 22:37:52 UTC; windows
+Archs: i386, x64

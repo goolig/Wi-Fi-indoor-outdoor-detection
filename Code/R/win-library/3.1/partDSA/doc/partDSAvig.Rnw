@@ -1,0 +1,497 @@
+\documentclass[nojss]{jss}
+
+%\VignetteIndexEntry{partDSA: Deletion/Substitution/Addition Algorithm for Partitioning the Covariate Space in Prediction}
+%\VignetteKeywords{Recursive partitioning}
+%\VignettePackage{partDSA}
+
+%% packages
+\usepackage{graphicx}
+\usepackage{subfigure}
+%\usepackage{Sweave}
+
+%% commands
+\def\thanks#1{%\footnotemark
+    \protected@xdef\@thanks{\@thanks
+        \protect\footnotetext[\the\c@footnote]{#1}}%
+}
+
+
+
+\def\RR{\mbox{\it I\hskip -0.177em R}}\def\RR{\mbox{\it I\hskip
+-0.177em R}}
+\def\NN{\mbox{\it I\hskip -0.177em N}}\def\NN{\mbox{\it I\hskip
+-0.177em N}}
+
+
+\title{\pkg{partDSA}: Deletion/Substitution/Addition Algorithm for Partitioning the Covariate Space in Prediction }
+\Shorttitle{\pkg{partDSA}}
+
+\author{Annette M. Molinaro \\University of California, San Francisco
+	   \And Stephen Weston \\Yale University}
+\Plainauthor{Annette M. Molinaro, Stephen Weston}
+\Keywords{Recursive partitioning}
+
+\Abstract{
+	
+	The \pkg{partDSA} package \citep{partDSAsoftware} provides  a novel recursive partitioning tool   
+	 for prediction when numerous variables jointly affect the outcome.   In such settings, piecewise 
+	 constant estimation provides an intuitive approach by elucidating interactions and correlation 
+	 patterns in addition to main effects.  As well as generating \textit{'and'} statements similar 
+	 to previously described methods, \pkg{partDSA} explores and chooses the best among all possible 
+	 \textit{'or'} statements. The immediate benefit of \pkg{partDSA} is the ability to build a 
+	 parsimonious model with \textit{'and'} and \textit{'or'} conjunctions. Currently, \pkg{partDSA} 
+	 is capable of handling categorical and continuous explanatory variables and outcomes. This 
+	 vignette provides a guide for analysis with the \pkg{partDSA} package while the actual 
+         algorithm is introduced and thoroughly described in
+         \cite{partDSApaper}. 
+
+}
+
+
+
+\begin{document}
+
+\thanks{Copyright \copyright 2010.}
+
+
+\section{Introduction}
+
+
+
+Classification and Regression Trees (CART) \citep*{Breiman}, a
+binary recursive partitioning algorithm, allows one to explore the
+individual contributions of various covariates as well as their
+interactions for the purposes of predicting outcomes.  The end
+product of CART is a list of \textit{'and'} statements. For example,
+a CART tree is illustrated in Figure \ref{fig:tree}. In this tree there
+are two variables (diagnosis age, a continuous variable, and tumor
+grade, an ordered variable) and the outcome is number of positive lymph nodes, a
+continuous variable. Thus, the parameter of interest is the
+conditional mean of the number of positive nodes given the covariates and
+the chosen loss function is the squared error. The splitting and
+pruning (details can be found in \cite{Breiman}) are based on the
+$L_2$ loss function and result in a tree with three terminal nodes.
+The final predictor can be read as: if a patient is less than $50$
+years of age, her predicted number of positive nodes is $\beta_1$; if a
+patient is over $50$ \textit{and} her tumor grade is less than or
+equal to $2$, her predicted number of positive nodes is $\beta_2$; if a
+patient is over $50$ \textit{and} her tumor grade is greater than
+$2$, her predicted number of positive nodes is $\beta_3$.
+
+
+
+\begin{figure}
+\center
+\includegraphics[angle=0,width=3.5in]{Tree3DiffOut}
+\caption{{\em Classification and Regression Tree Example.} This tree
+shows an example of recursive binary partitioning using CART with
+the variables 'Diagnosis Age' and 'Tumor Grade'. The terminal nodes have predicted values $\beta_1,\beta_2,\mbox{ and},
+\beta_3$.} \label{fig:tree}
+\end{figure}
+
+Although the importance of such statements is not in debate, there
+are settings where the \textit{'and'} statement ordering does not
+accurately account for all of the observed biological
+phenomena. Figure \ref{fig:tree2} illustrates the scenario when the number of positive nodes 
+is similar for women under 50 years of age and those over 50
+whose tumor grade is less than or equal to $2$, i.e. $\beta_1 = \beta_2$. The resulting
+model can be written as two partitions including an \emph{'or'}
+statement as opposed to three terminal nodes consisting of three
+individual \emph{'and'} statements. 
+
+\begin{figure}
+\center
+\includegraphics[angle=0,width=3.5in]{Tree2DiffOut}
+\caption{{\em Two terminal nodes with similar outcome.}  } \label{fig:tree2}
+\end{figure}
+
+
+The final predictor can be read as: if a patient is less than $50$
+years of age \textbf{\emph{OR}} if a
+patient is over $50$ \textit{and} her tumor grade is less than or
+equal to $2$,
+her predicted number of positive nodes is $\beta_1$;   if a
+patient is over $50$ \textit{and} her tumor grade is greater than
+$2$, her predicted number of positive nodes is $\beta_2$. This 
+ model can be drawn as shown in Figure
+\ref{fig:tree3}. Thus, as well as generating \textit{'and'} statements
+similar to CART, \pkg{partDSA} explores and chooses the best among all possible 
+	 \textit{'or'} statements. The immediate benefit of
+         \pkg{partDSA} is the ability to build a stable and 
+	 parsimonious model with \textit{'and'} and \textit{'or'} conjunctions.
+
+\begin{figure}
+\center
+\includegraphics[angle=0,width=3.5in]{TreepartDSA2}
+\caption{{\em Example of \emph{'or'} statement.}  } \label{fig:tree3}
+\end{figure}
+
+
+To illustrate \pkg{partDSA}, in Section \ref{s:obsdata} we begin by
+describing \pkg{partDSA} with  observed data and default settings
+and then describe the user-defined control parameters. Subsequently, in
+Section \ref{s:examples} we detail  examples. 
+
+
+
+\section{partDSA}\label{s:obsdata}
+
+
+In the prediction problem, we are interested in building and evaluating the performance of a rule or procedure fitted to $n$ independent observations, corresponding to the $n$ independent subjects in a study. Accordingly, we observe a random sample of $n$ $i.i.d.$ observations $W_1, \ldots, W_n$, where $W = (Y,X)$  contains an outcome $Y$ and a collection of $p$ measured explanatory variables, or features, $X = (X_1,...,X_p)'$. For example, in microarray experiments $X$  includes RNA or protein expression, chromosomal amplification and deletions, or epigenetic changes; while in proteomic data, it includes the intensities at the mass over charge (m/z) values. The collection of features may also contain explanatory variables measured in the clinic and/or by histopathology such as a patient's age or tumor stage. We denote the distribution of the data structure $W$ by $F_{W}$.  The variables which constitute  $X$ can be measured on a continuous, ordinal, or categorical scale. Although this covariate process may contain both time-dependent and time-independent covariates we will focus on the time-independent $X$. The outcome $Y$  may be a continuous measure such as tumor size, a categorical or ordinal measure such as stage of disease, or a binary measure such as disease status.
+
+For an example we will generate a training sample with a categorical
+outcome $Y$ and two continuous covariates, $X_1$ and $X_2$. 
+<<results=tex>>=
+y.out=as.factor(sample(c("a", "b", "c"), 50, TRUE) )
+x1=rexp(50)
+x2=runif(50)
+@ 
+
+To load the \pkg{partDSA} package and run the algorithm with default
+settings we type:
+
+<<results=tex>>=
+library(partDSA)
+#model1<-partDSA(x=data.frame(x1,x2),y=y.out)
+@ 
+
+If an independent test set is available it can be provided to assess
+how well the model built on the training set performs on the
+independent test set. For illustration we will generate a larger test
+set from the same distribution as the training set:
+
+<<results=tex>>=
+y.out.test=as.factor(sample(c("a", "b", "c"), 100, TRUE) )
+x1.test=rexp(100)
+x2.test=runif(100)
+@ 
+
+The independent test set is included as:
+<<results=tex>>=
+model2<-partDSA(x=data.frame(x1,x2),y=y.out,x.test=data.frame(x1=x1.test,x2=x2.test),y.test=y.out.test)
+@
+
+If \textbf{x.test} and \textbf{y.test} are not specified the default
+values are \textbf{x} and \textbf{y}, respectively. Case weights can also be specified for the training set via the
+\textbf{wt} argument and for the test set via the \textbf{wt.test}
+argument. By default both are set to vectors of 1's of length equal to the
+training and test sets, respectively. 
+
+
+\subsection{Parallel Computing}
+Cross-validation is employed in order to select the best model in
+\pkg{partDSA}. To address this added computational burden an optional
+cluster object can be specified via the sleigh argument which allows
+the cross-validation to be
+performed in parallel using the \pkg{parallel} package.  By default the cross-validation is run
+sequentially. 
+
+An example of running \pkg{partDSA} in parallel with two workers is:
+
+\begin{verbatim}
+library(parallel)
+cl <- makeCluster(2, type='PSOCK')
+cat(sprintf('Running a PSOCK cluster with %d workers\n', length(cl)))
+model3<-partDSA(x=data.frame(x1,x2),y=y.out,sleigh=cl)
+\end{verbatim}
+
+
+
+\section{Control Parameters}
+
+In addition to the training and test sets and corresponding weights,
+the user can specify numerous parameters via the control object. The
+control object is created by calling the DSA.control function. 
+ 
+\begin{verbatim}
+DSA.control(vfold=10, minsplit=20, minbuck=round(minsplit/3), cut.off.growth=10, MPD=0.1, 
+            missing="default", loss.function="default")
+\end{verbatim}
+
+The default values for each of the parameters are chosen by calling
+DSA.control with no arguments, i.e.
+
+\begin{verbatim}
+> partDSA(x=data.frame(x1,x2),y=y.out,control=DSA.control())
+\end{verbatim}
+
+\subsection{vfold}
+Cross-validation is used to select the best model among those
+generated \citep{Molinaro08012005,MolinaroLostrittoBioChapter}. As such, \pkg{partDSA} initially splits the training set
+into $v$-folds. For each of $v$ times,  $v-1$ of the folds are used to build up to $M=$\emph{cut-off-growth}
+models (each of which is the best model for $1,\cdots, M$
+partitions). Subsequently,  the one fold left out of model
+building is used to assess the performance of the associated
+model. Once all $v$-folds have run, the cross-validated error is
+calculated as the average squared-error (for a continuous outcome) or
+misclassification error (for a categorical outcome)  over the $v$-folds for each of the possible partitions,
+$1,\cdots, M$. By default $vfold=10$ and $10$-fold cross validation is
+performed. For a training set of size $n$, if $vfold$ is set equal to $n$
+it is equivalent to running leave-one-out cross-validation.  For
+exploratory purposes and if no model selection is needed, $vfold$ can
+be set to 1 to avoid any cross-validation. That is, to just build a
+model without 
+cross-validation, we can specify:
+
+\begin{verbatim}
+> partDSA(x=data.frame(x1,x2),y=y.out,control=DSA.control(vfold=1))
+\end{verbatim}
+
+
+\subsection{minsplit}
+Minsplit is the minimum number of observations necessary to split one partition into two partitions. 
+By default minsplit is set equal to 20,  to specify a minimum of 15 observations, we can write:
+
+\begin{verbatim}
+> partDSA(x=data.frame(x1,x2),y=y.out,control=DSA.control(minsplit=15))
+\end{verbatim}
+
+\subsection{minbuck}
+Minbuck is the minimum number of observations that can be in a
+partition. In order to split a partition into two (either via the Addition
+or Substitution steps), there must be at least $2*minbuck$
+observations. By default minbuck is set equal to $round(minsplit/3) = 7$ as 
+$minsplit = 20$ by default. To specify a minimum of 15 observations in any
+terminal partition, we should also increase minsplit from the default of 20, 
+and we can write:
+
+\begin{verbatim}
+> partDSA(x=data.frame(x1,x2),y=y.out,control=DSA.control(minsplit=40, minbuck=15))
+\end{verbatim}
+
+\subsection{cut-off-growth}
+Cut-off-growth is the maximum number of partitions that will be
+explored. The more partitions that are examined the more the
+computational burden and likelihood of overfitting, thus
+cut-off-growth has a default value of 10. To specify a different
+value, we type:
+
+\begin{verbatim}
+> partDSA(x=data.frame(x1,x2),y=y.out,control=DSA.control(cut.off.growth=15))
+\end{verbatim}
+
+\subsection{MPD}
+Minimum percent difference, or MPD, is the smallest percentage by
+which the next move (Addition, Substitution, or Deletion) must
+improve the current fit (i.e., the reduction in the empirical
+risk). The larger the percentage is the bigger the improvement and the
+fewer possible moves to consider. By default $MPD = 0.1$, or 10\%. To
+change $MPD$ to 30\%, we can specify:
+
+
+\begin{verbatim}
+> partDSA(x=data.frame(x1,x2),y=y.out,control=DSA.control(MPD=0.3))
+\end{verbatim}
+
+
+
+
+\subsection{Missing values}
+
+
+Currently, \pkg{partDSA} can accomodate missing values in the
+covariates via imputation. As such, there are two settings for the missing value argument
+named $missing$: ``no''
+and ``impute.at.split''. $Missing$ set to "no" indicates that there is
+no missing data and will create an error if missing data is found in
+the dataset.  By default $missing="no"$. For missing covariate data, \pkg{partDSA} will employ a data imputation method similar to that in 
+CRUISE (Kim and Loh, 2001) with $missing="impute.at.split"$. Where at each split, the non-missing observations for a given variable are used to find 
+the best split, and the missing observations are imputed based on the mean or mode (depending on whether the 
+variable is categorical or continuous) of the non-missing observations in that node. Once the node assignment of 
+the missing observations is determined using the imputed values, the imputed values are returned to their missing 
+state. For missing values in the test set, the grand mean or mode from the corresponding variables in the training 
+set are used. Including variables which are entirely missing will
+result in an error. To set $missing$ to ``impute.at.split'', we type:
+
+\begin{verbatim}
+> partDSA(x=data.frame(x1,x2),y=y.out,control=DSA.control(missing="impute.at.split"))
+\end{verbatim}
+
+\subsection{Loss Functions for Univariate Prediction}\label{s:lossNA}
+
+\pkg{partDSA}  employs loss functions for two key stages of model building: separating the observed sample into
+different groups (or partitions) and selecting the final prediction
+model. The general purpose of the loss function $L$ is to quantify performance.
+Thus, depending on the parameter of interest, there could be
+numerous loss functions from which to choose. If the outcome $Y$ is continuous, frequently, the
+parameter of interest is the conditional mean $\psi_0(W) = E[Y \mid
+W]$ which has the corresponding squared error loss function,
+$L(X,\psi) = (Y - \psi(W))^2$. 
+
+If the outcome $Y$ is categorical, the parameter
+    of interest involves the class conditional probabilities,
+    $Pr_0(y|W)$. For the indicator loss function, $L(X,\psi) = I(Y
+    \neq \psi(W))$, the optimal parameter is $\psi_0(W) = {\rm argmax}_y
+    Pr_0(y \mid W)$, the class with maximum probability given
+    covariates $W$. One could also use a loss
+    function which incorporates differential misclassification costs. Note that in the standard CART methodology,
+\cite{Breiman}
+favor replacing the indicator loss function in the
+    splitting rule by measures of node impurity, such as the entropy,
+    Gini, or twoing indices (Chapter 4).  The indicator loss function
+    is still used for pruning and performance
+    assessment. It turns out that the entropy criterion
+    corresponds to the negative log-likelihood loss function,
+    $L(X,\psi) = -\log \psi(X)$, and parameter of interest $\psi_0(X)
+    = Pr_0(Y|W)$. Likewise, the Gini criterion corresponds to the loss
+    function $L(X,\psi) = 1 - \psi(X)$, with parameter of interest $\psi_0(X)
+    = 1$ if $Y= {\rm argmax}_y Pr_0(y \mid W)$ and 0 otherwise. At the
+    current time \pkg{partDSA} is enabled for the $L_2$ or squared error loss
+    function (the default) for continuous outcomes and either the Gini (``gini'')
+    or entropy (``entropy'', the default)
+    loss functions for categorical outcomes. The loss function can be
+    specified in \texttt{DSA.control}:
+ 
+
+\begin{verbatim}
+> model2<-partDSA(x=data.frame(x1,x2),y=y.out,
+                control=DSA.control(loss.function="gini"))
+\end{verbatim}
+
+
+
+\section{Output and Viewing the partitions}
+Once \pkg{partDSA} has run the outcome can be examined by using the
+\texttt{print()} statement. For example, using the previously
+generated data we can run the algorithm with only up to two partitions:
+
+<<results=tex>>=
+model4<-partDSA(x=data.frame(x1,x2),y=y.out,control=DSA.control(missing="no",cut.off.growth=2))
+@ 
+
+And then look at the results by typing:
+
+
+<<echo=T>>=
+print(model4)
+@ 
+
+
+\hspace{1cm}
+The first item is the table summarizing the average cross-validated
+error over the vfolds, the standard error for the cross-validated
+error, and the test set risk. Each is reported for up to
+$M=2=cut.off.growth$ partitions. The second item labeled 'Outcome' is the predicted
+outcome for each partition. In our example, if only one partition is
+chosen (i.e. all observations are together) the
+predicted outcome is
+``\Sexpr{model4$y.levels[model4$coeff[[1]]]}''. If two partitions are
+chosen then the first partition has predicted outcome ``\Sexpr{model4$y.levels[model4$coeff[[2]][1]]}`` and the
+second has predicted outcome
+``\Sexpr{model4$y.levels[model4$coeff[[2]][2]]}``.  The description of
+how the partitions are defined follows. In this example we 
+specified a maximum of 2 partitions, thus, we only see the
+description for the best of 2 partitions. The final item is the variable importance matrix. This
+matrix simply keeps track of how many times each variable defines a
+partition. The variables are listed as rows and the partitions as
+columns (here COG = cut-off-growth). For example, for COG = 1  neither of
+the variables define the one partition because all observations are
+kept in one partition with no splitting. For COG = 2, x1 is used to
+define \Sexpr{model4$var.importance[,2][1]} of the two total
+partitions and x2 is used to define
+\Sexpr{model4$var.importance[,2][2]} of the two total partitions. \\
+
+In order to view the partitions Java must be installed. For example to see a the two partitions for our running example we type:
+\begin{verbatim}
+> showDSA(model4)
+\end{verbatim}
+
+There are three windows in the output shown in Figure \ref{fig:part1}.
+The Node Browser, i.e. the top-left window, lists the best of each
+number of allowed partitions (from $1,\cdots,M=cut-off-growth$)  and allows
+the user to navigate through the different splits and into the final
+partitions by clicking. The right window displays what is chosen in
+the Node Browser window.  For example, here we see that in the
+Node Browser window 'Best two partitions' is highlighted and in the right
+window we see the visual of those two partitions. Namely, observations
+with a value of x1 greater than 0.77 are assigned to the left
+partition with predicted outcome ``b''. Observations with an x1 value
+less than 0.77 are assigned to the right partition with predicted
+outcome ``a''. \\
+
+The bottom-left window, labeled 'Selected Node',  becomes active once a final
+partition is highlighted in the Node Browser window. This is shown in
+Figure \ref{fig:part2}. Now note that in the Node Browser window the final partition labeled with
+the predicted outcome ``b'' is highlighted and the pathway from the
+orignating partition to the final partition is highlighted in the
+right window. The Selected Node window is now active and reports
+information such as the predicted value and how
+many observations from the training set are contained in the final
+partition and thus estimate the predicted value. Additional
+information such as the section and number of sections inform the user
+as to if this final partition stands alone or is part of an 'or'
+statement ordering. 
+
+
+
+\begin{figure}[ht]
+\centering
+\subfigure[{\em Visualization of Model4 with two partitions.}]{
+\includegraphics[scale=.5]{part12}
+\label{fig:part1}
+}
+\subfigure[{\em Visualization of Model4 with two partitions and one final
+    partition highlighted.}]{
+\includegraphics[scale=.5]{part22}
+\label{fig:part2}
+}
+\label{fig:subfigureExample}
+\caption{Visualization of Partitions}
+\end{figure}
+
+
+
+
+\section{Examples} \label{s:examples}
+
+
+
+\subsection{Categorical outcome}
+The German Breast Cancer Study Group (GBSG2) datai is a prospective
+controlled clinical trial on the treatment of node positive breast
+cancer patients \citep{GBSG}. The data (available within the TH.data
+package) contains 686 women with seven prognostic factors measured. 
+For this analysis we will predict recurrence by using the censoring status (0 = uncensored, 1
+= censored). 
+
+
+
+<<echo=T>>=
+data("GBSG2", package = "TH.data")
+mdl1<-partDSA(x=data.frame(GBSG2[,c(1:8)]),y=as.factor(GBSG2$cens),control=DSA.control(cut.off.growth=5,loss.function="gini",minsplit=30,minbuck=10))
+print(mdl1)
+@ 
+\begin{verbatim}
+> showDSA(mdl1)
+\end{verbatim}
+
+An example of the partDSA model is shown in
+Figure \ref{fig:gbsg1}. The following can be read from the visualization:
+
+\begin{itemize}
+ \item If the patient has less than 3 positive nodes (pnodes) she has
+   a predicted outcome of 0 (p1: 0).
+   \item If the patient has greater than 21 positive nodes (pnodes)
+     \textbf{OR} between 9 and 21 positive nodes and has estrogen
+     receptor value less than or equal to 0 fmol (estrec) \textbf{OR}  between
+     3 and 9 positive nodes and tumor size < 20 and age < 54, she has
+     a predicted outcoem of 0 (p2:0).
+     \item If the patient has between 9 and 21 positive nodes (pnodes)
+       and an estrogen receptor value greater than 0 (estrec), she has
+       a predicted outcome of 1 (p3:1).
+       \item If the patient has between 3 and 9 positive nodes
+         (pnodes) and tumor size greater than 20, she has a predicted
+         outcome of 1 (p4:1).
+  
+  \end{itemize}
+
+\begin{figure}
+\center
+\includegraphics[angle=0,width=6in]{GBSG1}
+\caption{\emph{German Breast Cancer Study Group Example}  } \label{fig:gbsg1}
+\end{figure}
+
+\bibliography{refs}
+
+\end{document}
+

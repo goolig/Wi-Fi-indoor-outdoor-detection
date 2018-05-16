@@ -1,0 +1,32 @@
+YVRprecip               Daily precipitation data at Vancouver Int'l
+                        Airport (YVR)
+censored.mean           A hybrid mean/median function for left censored
+                        variables
+dquantile               Interpolated quantile distribution with
+                        exponential tails
+gam.style               GAM-style effects plots for interpreting qrnn
+                        models
+hramp                   Huber norm approximation to the ramp function
+hramp.prime             Derivative of the Huber norm approximation to
+                        the ramp function
+huber                   Huber norm function
+huber.prime             Derivative of the Huber norm function
+linear                  Identity function
+linear.prime            Derivitative of the linear function
+qrnn-package            Quantile regression neural network
+qrnn.cost               Huber norm approximation to the tilted absolute
+                        value cost function
+qrnn.eval               Evaluate outputs from a QRNN model
+qrnn.fit                Main function used to fit a QRNN model or
+                        ensemble of QRNN models
+qrnn.initialize         Initialize a QRNN weight vector
+qrnn.nlm                Fit a QRNN model via nlm()
+qrnn.predict            Evaluate quantiles from trained QRNN model
+qrnn.rbf                Radial basis function kernel
+qrnn.reshape            Reshape a QRNN weight vector
+sigmoid                 Sigmoid function
+sigmoid.prime           Derivative of the sigmoid function
+sinc                    Noisy sinc dataset
+tilted.abs              Tilted absolute value function
+tilted.huber            Tilted Huber norm function
+tilted.huber.prime      Derivative of the tilted Huber norm function

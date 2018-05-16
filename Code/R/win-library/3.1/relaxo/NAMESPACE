@@ -1,0 +1,7 @@
+import(graphics)
+importFrom(utils,str)
+importFrom(stats,coef,sd)
+export(relaxo,cvrelaxo)
+S3method(predict,relaxo)
+S3method(plot,relaxo)
+S3method(print,relaxo)

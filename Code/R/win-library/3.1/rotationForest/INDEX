@@ -1,0 +1,4 @@
+predict.rotationForest
+                        Predict method for rotationForest objects
+rotationForest          Binary classification with Rotation Forest
+                        (Rodriguez en Kuncheva, 2006)

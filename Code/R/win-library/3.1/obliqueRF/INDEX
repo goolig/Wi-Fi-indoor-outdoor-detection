@@ -1,0 +1,5 @@
+importance              Extract variable importance measure
+obliqueRF               Classification with Oblique Random Forest
+orfNews                 Show the NEWS file
+predict.obliqueRF       predict method for oblique random forest
+                        objects
